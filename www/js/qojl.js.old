@@ -1,0 +1,632 @@
+	
+// Coherent States plot
+$.getJSON('js/plots/coherentstate.json', function (data) {
+	
+	data1 = [];
+	var jsondata = data.QuTiP_3_1_0;
+	
+	for (var i in jsondata) {
+		xval = jsondata[i].N;
+		yval = jsondata[i].t;
+		data1.push({x: xval, y: yval});
+	}
+
+	
+	data2 = [];
+	var jsondata = data.QuantumOptics_jl_f37e22f2e7;
+	
+	for (var i in jsondata) {
+		xval = jsondata[i].N;
+		yval = jsondata[i].t;
+		data2.push({x: xval, y: yval});
+	}
+
+
+	var ctx = $('#plot-coherentstate');
+
+	var scatterChart = new Chart(ctx, {
+	    type: 'line',
+	    data: {
+	        datasets: [{
+	            label: 'QuTiP 3.1.0',
+	            data: data1,
+	            fill: false,
+	            borderWidth: 3.0,
+	            borderColor: '#3366cc',
+	            backgroundColor: '#3366cc'
+	        }, {
+		       label: 'QuantumOptics.jl',
+		       data: data2,
+		       fill: false,
+		       borderWidth: 3.0,
+		       borderColor: '#ff6600',
+		       backgroundColor: '#ff6600'
+	        }]
+	    },
+	    options: {
+		    title: {
+			    display: true,
+				text: 'Coherent State Performacne'
+				},
+	        scales: {
+	            xAxes: [{
+		            type: 'linear',
+		            position: 'bottom',
+	                scaleLabel: {
+		                display: true,
+		                labelString: 'Hilbert-Space Dimension'
+	                }      
+	            }],
+	            yAxes: [{
+	                scaleLabel: {
+		                display: true,
+		                labelString: 'Ellapsed Time'
+	                }
+	                
+	            }]
+	        }
+	    }
+	});
+	});
+
+// Operator Expectation Values Plot
+$.getJSON('js/plots/expect_operator.json', function (data) {
+	
+	data1 = [];
+	var jsondata = data.QuTiP_3_1_0;
+	
+	for (var i in jsondata) {
+		xval = jsondata[i].N;
+		yval = jsondata[i].t;
+		data1.push({x: xval, y: yval});
+	}
+
+	
+	data2 = [];
+	var jsondata = data.QuantumOptics_jl_f37e22f2e7;
+	
+	for (var i in jsondata) {
+		xval = jsondata[i].N;
+		yval = jsondata[i].t;
+		data2.push({x: xval, y: yval});
+	}
+
+
+	var ctx = $('#plot-expect-operator');
+
+	var scatterChart = new Chart(ctx, {
+	    type: 'line',
+	    data: {
+	        datasets: [{
+	            label: 'QuTiP 3.1.0',
+	            data: data1,
+	            fill: false,
+	            borderWidth: 3.0,
+	            borderColor: '#3366cc',
+	            backgroundColor: '#3366cc'
+	        }, {
+		       label: 'QuantumOptics.jl',
+		       data: data2,
+		       fill: false,
+		       borderWidth: 3.0,
+		       borderColor: '#ff6600',
+		       backgroundColor: '#ff6600'
+	        }]
+	    },
+	    options: {
+		    title: {
+			    display: true,
+				text: 'QFunc Performance for States'
+				},
+	        scales: {
+	            xAxes: [{
+		            type: 'linear',
+		            position: 'bottom',
+	                scaleLabel: {
+		                display: true,
+		                labelString: 'Hilbert-Space Dimension'
+	                }      
+	            }],
+	            yAxes: [{
+	                scaleLabel: {
+		                display: true,
+		                labelString: 'Ellapsed Time'
+	                }
+	                
+	            }]
+	        }
+	    }
+	});
+	});
+
+// State Expectation Values Plot
+$.getJSON('js/plots/expect_state.json', function (data) {
+	
+	data1 = [];
+	var jsondata = data.QuTiP_3_1_0;
+	
+	for (var i in jsondata) {
+		xval = jsondata[i].N;
+		yval = jsondata[i].t;
+		data1.push({x: xval, y: yval});
+	}
+
+	
+	data2 = [];
+	var jsondata = data.QuantumOptics_jl_f37e22f2e7;
+	
+	for (var i in jsondata) {
+		xval = jsondata[i].N;
+		yval = jsondata[i].t;
+		data2.push({x: xval, y: yval});
+	}
+
+
+	var ctx = $('#plot-expect-state');
+
+	var scatterChart = new Chart(ctx, {
+	    type: 'line',
+	    data: {
+	        datasets: [{
+	            label: 'QuTiP 3.1.0',
+	            data: data1,
+	            fill: false,
+	            borderWidth: 3.0,
+	            borderColor: '#3366cc',
+	            backgroundColor: '#3366cc'
+	        }, {
+		       label: 'QuantumOptics.jl',
+		       data: data2,
+		       fill: false,
+		       borderWidth: 3.0,
+		       borderColor: '#ff6600',
+		       backgroundColor: '#ff6600'
+	        }]
+	    },
+	    options: {
+		    title: {
+			    display: true,
+				text: 'Operator Expectation Values for States'
+				},
+	        scales: {
+	            xAxes: [{
+		            type: 'linear',
+		            position: 'bottom',
+	                scaleLabel: {
+		                display: true,
+		                labelString: 'Hilbert-Space Dimension'
+	                }      
+	            }],
+	            yAxes: [{
+	                scaleLabel: {
+		                display: true,
+		                labelString: 'Ellapsed Time'
+	                }
+	                
+	            }]
+	        }
+	    }
+	});
+	});
+
+// Partial Trace Plot
+$.getJSON('js/plots/ptrace.json', function (data) {
+	
+	data1 = [];
+	var jsondata = data.QuTiP_3_1_0;
+	
+	for (var i in jsondata) {
+		xval = jsondata[i].N;
+		yval = jsondata[i].t;
+		data1.push({x: xval, y: yval});
+	}
+
+	
+	data2 = [];
+	var jsondata = data.QuantumOptics_jl_f37e22f2e7;
+	
+	for (var i in jsondata) {
+		xval = jsondata[i].N;
+		yval = jsondata[i].t;
+		data2.push({x: xval, y: yval});
+	}
+
+
+	var ctx = $('#plot-ptrace');
+
+	var scatterChart = new Chart(ctx, {
+	    type: 'line',
+	    data: {
+	        datasets: [{
+	            label: 'QuTiP 3.1.0',
+	            data: data1,
+	            fill: false,
+	            borderWidth: 3.0,
+	            borderColor: '#3366cc',
+	            backgroundColor: '#3366cc'
+	        }, {
+		       label: 'QuantumOptics.jl',
+		       data: data2,
+		       fill: false,
+		       borderWidth: 3.0,
+		       borderColor: '#ff6600',
+		       backgroundColor: '#ff6600'
+	        }]
+	    },
+	    options: {
+		    title: {
+			    display: true,
+				text: 'Partial Trace Performance'
+				},
+	        scales: {
+	            xAxes: [{
+		            type: 'linear',
+		            position: 'bottom',
+	                scaleLabel: {
+		                display: true,
+		                labelString: 'Hilbert-Space Dimension'
+	                }      
+	            }],
+	            yAxes: [{
+	                scaleLabel: {
+		                display: true,
+		                labelString: 'Ellapsed Time'
+	                }
+	                
+	            }]
+	        }
+	    }
+	});
+	});
+
+// Operator QFunc Plot
+$.getJSON('js/plots/qfunc_operator.json', function (data) {
+	
+	data1 = [];
+	var jsondata = data.QuTiP_3_1_0;
+	
+	for (var i in jsondata) {
+		xval = jsondata[i].N;
+		yval = jsondata[i].t;
+		data1.push({x: xval, y: yval});
+	}
+
+	
+	data2 = [];
+	var jsondata = data.QuantumOptics_jl_f37e22f2e7;
+	
+	for (var i in jsondata) {
+		xval = jsondata[i].N;
+		yval = jsondata[i].t;
+		data2.push({x: xval, y: yval});
+	}
+
+
+	var ctx = $('#plot-qfunc-operator');
+
+	var scatterChart = new Chart(ctx, {
+	    type: 'line',
+	    data: {
+	        datasets: [{
+	            label: 'QuTiP 3.1.0',
+	            data: data1,
+	            fill: false,
+	            borderWidth: 3.0,
+	            borderColor: '#3366cc',
+	            backgroundColor: '#3366cc'
+	        }, {
+		       label: 'QuantumOptics.jl',
+		       data: data2,
+		       fill: false,
+		       borderWidth: 3.0,
+		       borderColor: '#ff6600',
+		       backgroundColor: '#ff6600'
+	        }]
+	    },
+	    options: {
+		    title: {
+			    display: true,
+				text: 'QFunc Performacne for Density Operators'
+				},
+	        scales: {
+	            xAxes: [{
+		            type: 'linear',
+		            position: 'bottom',
+	                scaleLabel: {
+		                display: true,
+		                labelString: 'Hilbert-Space Dimension'
+	                }      
+	            }],
+	            yAxes: [{
+	                scaleLabel: {
+		                display: true,
+		                labelString: 'Ellapsed Time'
+	                }
+	                
+	            }]
+	        }
+	    }
+	});
+	});
+
+// State QFunc Plot
+$.getJSON('js/plots/qfunc_state.json', function (data) {
+	
+	data1 = [];
+	var jsondata = data.QuTiP_3_1_0;
+	
+	for (var i in jsondata) {
+		xval = jsondata[i].N;
+		yval = jsondata[i].t;
+		data1.push({x: xval, y: yval});
+	}
+
+	
+	data2 = [];
+	var jsondata = data.QuantumOptics_jl_f37e22f2e7;
+	
+	for (var i in jsondata) {
+		xval = jsondata[i].N;
+		yval = jsondata[i].t;
+		data2.push({x: xval, y: yval});
+	}
+
+
+	var ctx = $('#plot-qfunc-state');
+
+	var scatterChart = new Chart(ctx, {
+	    type: 'line',
+	    data: {
+	        datasets: [{
+	            label: 'QuTiP 3.1.0',
+	            data: data1,
+	            fill: false,
+	            borderWidth: 3.0,
+	            borderColor: '#3366cc',
+	            backgroundColor: '#3366cc'
+	        }, {
+		       label: 'QuantumOptics.jl',
+		       data: data2,
+		       fill: false,
+		       borderWidth: 3.0,
+		       borderColor: '#ff6600',
+		       backgroundColor: '#ff6600'
+	        }]
+	    },
+	    options: {
+		    title: {
+			    display: true,
+				text: 'QFunc Performacne for States'
+				},
+	        scales: {
+	            xAxes: [{
+		            type: 'linear',
+		            position: 'bottom',
+	                scaleLabel: {
+		                display: true,
+		                labelString: 'Hilbert-Space Dimension'
+	                }      
+	            }],
+	            yAxes: [{
+	                scaleLabel: {
+		                display: true,
+		                labelString: 'Ellapsed Time'
+	                }
+	                
+	            }]
+	        }
+	    }
+	});
+	});
+
+// Operator Variance Plot
+$.getJSON('js/plots/variance_operator.json', function (data) {
+	
+	data1 = [];
+	var jsondata = data.QuTiP_3_1_0;
+	
+	for (var i in jsondata) {
+		xval = jsondata[i].N;
+		yval = jsondata[i].t;
+		data1.push({x: xval, y: yval});
+	}
+
+	
+	data2 = [];
+	var jsondata = data.QuantumOptics_jl_14e9316f7b;
+	
+	for (var i in jsondata) {
+		xval = jsondata[i].N;
+		yval = jsondata[i].t;
+		data2.push({x: xval, y: yval});
+	}
+
+
+	var ctx = $('#plot-variance-operator');
+
+	var scatterChart = new Chart(ctx, {
+	    type: 'line',
+	    data: {
+	        datasets: [{
+	            label: 'QuTiP 3.1.0',
+	            data: data1,
+	            fill: false,
+	            borderWidth: 3.0,
+	            borderColor: '#3366cc',
+	            backgroundColor: '#3366cc'
+	        }, {
+		       label: 'QuantumOptics.jl',
+		       data: data2,
+		       fill: false,
+		       borderWidth: 3.0,
+		       borderColor: '#ff6600',
+		       backgroundColor: '#ff6600'
+	        }]
+	    },
+	    options: {
+		    title: {
+			    display: true,
+				text: 'Variance for Density Operators'
+				},
+	        scales: {
+	            xAxes: [{
+		            type: 'linear',
+		            position: 'bottom',
+	                scaleLabel: {
+		                display: true,
+		                labelString: 'Hilbert-Space Dimension'
+	                }      
+	            }],
+	            yAxes: [{
+	                scaleLabel: {
+		                display: true,
+		                labelString: 'Ellapsed Time'
+	                }
+	                
+	            }]
+	        }
+	    }
+	});
+	});
+
+// State Variance Plot
+$.getJSON('js/plots/variance_state.json', function (data) {
+	
+	data1 = [];
+	var jsondata = data.QuTiP_3_1_0;
+	
+	for (var i in jsondata) {
+		xval = jsondata[i].N;
+		yval = jsondata[i].t;
+		data1.push({x: xval, y: yval});
+	}
+
+	
+	data2 = [];
+	var jsondata = data.QuantumOptics_jl_14e9316f7b;
+	
+	for (var i in jsondata) {
+		xval = jsondata[i].N;
+		yval = jsondata[i].t;
+		data2.push({x: xval, y: yval});
+	}
+
+
+	var ctx = $('#plot-variance-state');
+
+	var scatterChart = new Chart(ctx, {
+	    type: 'line',
+	    data: {
+	        datasets: [{
+	            label: 'QuTiP 3.1.0',
+	            data: data1,
+	            fill: false,
+	            borderWidth: 3.0,
+	            borderColor: '#3366cc',
+	            backgroundColor: '#3366cc'
+	        }, {
+		       label: 'QuantumOptics.jl',
+		       data: data2,
+		       fill: false,
+		       borderWidth: 3.0,
+		       borderColor: '#ff6600',
+		       backgroundColor: '#ff6600'
+	        }]
+	    },
+	    options: {
+		    title: {
+			    display: true,
+				text: 'Variance for States'
+				},
+	        scales: {
+	            xAxes: [{
+		            type: 'linear',
+		            position: 'bottom',
+	                scaleLabel: {
+		                display: true,
+		                labelString: 'Hilbert-Space Dimension'
+	                }      
+	            }],
+	            yAxes: [{
+	                scaleLabel: {
+		                display: true,
+		                labelString: 'Ellapsed Time'
+	                }
+	                
+	            }]
+	        }
+	    }
+	});
+	});
+
+
+// Time Evolution Plot
+$.getJSON('js/plots/timeevolution_master.json', function (data) {
+	
+	data1 = [];
+	var jsondata = data.QuTiP_3_1_0;
+	
+	for (var i in jsondata) {
+		xval = jsondata[i].N;
+		yval = jsondata[i].t;
+		data1.push({x: xval, y: yval});
+	}
+
+	
+	data2 = [];
+	var jsondata = data.QuantumOptics_jl_f37e22f2e7;
+	
+	for (var i in jsondata) {
+		xval = jsondata[i].N;
+		yval = jsondata[i].t;
+		data2.push({x: xval, y: yval});
+	}
+
+
+	var ctx = $('#plot-time-evolution');
+
+	var scatterChart = new Chart(ctx, {
+	    type: 'line',
+	    data: {
+	        datasets: [{
+	            label: 'QuTiP 3.1.0',
+	            data: data1,
+	            fill: false,
+	            borderWidth: 3.0,
+	            borderColor: '#3366cc',
+	            backgroundColor: '#3366cc'
+	        }, {
+		       label: 'QuantumOptics.jl',
+		       data: data2,
+		       fill: false,
+		       borderWidth: 3.0,
+		       borderColor: '#ff6600',
+		       backgroundColor: '#ff6600'
+	        }]
+	    },
+	    options: {
+		    title: {
+			    display: true,
+				text: 'Time Evolution Master Equation'
+				},
+	        scales: {
+	            xAxes: [{
+		            type: 'linear',
+		            position: 'bottom',
+	                scaleLabel: {
+		                display: true,
+		                labelString: 'Hilbert-Space Dimension'
+	                }      
+	            }],
+	            yAxes: [{
+	                scaleLabel: {
+		                display: true,
+		                labelString: 'Ellapsed Time'
+	                }
+	                
+	            }]
+	        }
+	    }
+	});
+	});
+
