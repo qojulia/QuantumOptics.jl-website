@@ -14,10 +14,16 @@
         </div>
         <div class="row"> 
             <div class="col-md-8 col-md-offset-2">
-            	<canvas id="plot-time-evolution"></canvas>
+            	<canvas id="plot-timeevolution-master"></canvas>
             </div>
         </div>
         <div class="row">
+	        <div class="col-md-6">
+            	<canvas id="plot-timeevolution-particle"></canvas>
+            </div>
+            <div class="col-md-6">
+            	<canvas id="plot-multiplication"></canvas>
+            </div>
             <div class="col-md-6">
             	<canvas id="plot-expect-state"></canvas>
             </div>

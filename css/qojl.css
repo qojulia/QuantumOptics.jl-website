@@ -1,12 +1,11 @@
 .jumbotron {
 	margin-top: -150px;
 	height: 350px;
-	background-image: url(../images/bg.jpg);
-	background-size: cover;
-	color: #ffffff;
+	background: #eeeeee;
+	color: #000000;
 }
 
-.jumbotron h1 {
+.jumbotron img {
 	padding-top: 60px;
 }
 
@@ -34,4 +33,18 @@ footer p {
 
 canvas {
 	padding: 20px 0;
+}
+
+#features .fa-lg {
+	font-size: 72px;
+}
+
+#features #feature1 {
+	color: #d66761;
+}
+#features #feature2 {
+	color: #a87db6;
+}
+#features #feature3 {
+	color: #6cac5b;
 }

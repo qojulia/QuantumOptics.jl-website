@@ -1,94 +1,53 @@
-// Global Chart Configuration	
-Chart.defaults.global = {
-	type: 'line',
-	data: {
-	        datasets: [{
-	            label: 'QuTiP 3.1.0',
-	            fill: false,
-	            borderWidth: 3.0,
-	            borderColor: '#3366cc',
-	            backgroundColor: '#3366cc'
-	        }, {
-		       label: 'QuantumOptics.jl',
-		       fill: false,
-		       borderWidth: 3.0,
-		       borderColor: '#ff6600',
-		       backgroundColor: '#ff6600'
-	        }]
-	    },
-	    options: {
-		    title: {
-			    display: true,
-			    title: 'Test'
-				},
-	        scales: {
-	            xAxes: [{
-		            type: 'linear',
-		            position: 'bottom',
-	                scaleLabel: {
-		                display: true,
-		                labelString: 'Hilbert-Space Dimension'
-	                }      
-	            }],
-	            yAxes: [{
-	                scaleLabel: {
-		                display: true,
-		                labelString: 'Ellapsed Time'
-	                }
-	                
-	            }]
-	        }
-	    }
+// Config
+var qojl_data = "QuantumOptics.jl-ae69320f5c";
+var qutip_data = "QuTiP-3.1.0";
+var toolbox_data = "QuantumOpticsToolbox";
+
+// Rearrange dat structure
+function rearrange (jsondata) {
+		d = [];
+	
+	for (var i in jsondata) {
+		xval = jsondata[i].N;
+		yval = jsondata[i].t;
+		d.push({x: xval, y: yval});
+	}
+	
+	return d;
 }
 
-
-$.getJSON('js/plots/coherentstate.json', function (data) {
-	
-	data1 = [];
-	var jsondata = data.QuTiP_3_1_0;
-	
-	for (var i in jsondata) {
-		xval = jsondata[i].N;
-		yval = jsondata[i].t;
-		data1.push({x: xval, y: yval});
-	}
-
-	
-	data2 = [];
-	var jsondata = data.QuantumOptics_jl_f37e22f2e7;
-	
-	for (var i in jsondata) {
-		xval = jsondata[i].N;
-		yval = jsondata[i].t;
-		data2.push({x: xval, y: yval});
-	}
-
-
-	var ctx = $('#plot-coherentstate');
-
-	var scatterChart = new Chart(ctx, {
+// Dynamically object with all the plot parameters and settings
+function chartconfig (data, charttitle) {
+	return {
 	    type: 'line',
 	    data: {
 	        datasets: [{
-	            label: 'QuTiP 3.1.0',
-	            data: data1,
-	            fill: false,
-	            borderWidth: 3.0,
-	            borderColor: '#3366cc',
-	            backgroundColor: '#3366cc'
-	        }, {
 		       label: 'QuantumOptics.jl',
-		       data: data2,
+		       data: rearrange(data[qojl_data]),
 		       fill: false,
 		       borderWidth: 3.0,
-		       borderColor: '#ff6600',
-		       backgroundColor: '#ff6600'
+		       borderColor: '#d66761',
+		       backgroundColor: '#d66761'
+	        }, {
+	            label: 'QuTiP 3.1.0',
+	            data: rearrange(data[qutip_data]),
+	            fill: false,
+	            borderWidth: 3.0,
+	            borderColor: '#a87db6',
+	            backgroundColor: '#a87db6'
+	        }, {
+		       label: 'QO Toolbox',
+		       data: rearrange(data[toolbox_data]),
+		       fill: false,
+		       borderWidth: 3.0,
+		       borderColor: '#6cac5b',
+		       backgroundColor: '#6cac5b'
 	        }]
 	    },
 	    options: {
 		    title: {
 			    display: true,
-				text: 'Coherent State Performacne'
+				text: charttitle,
 				},
 	        scales: {
 	            xAxes: [{
@@ -108,5 +67,27 @@ $.getJSON('js/plots/coherentstate.json', function (data) {
 	            }]
 	        }
 	    }
+	};
+}
+
+
+// Function to create Plot from JSON
+function createplot (file, htmlid, title) {
+	$.getJSON('js/plots/'+file, function (data) {
+	var ctx = $(htmlid);
+	var scatterChart = new Chart(ctx, chartconfig(data, title));
 	});
-	});
+}
+
+// Now, create the plots
+createplot('timeevolution_master.json', '#plot-timeevolution-master', 'Time Evolution (Master Equation)');
+createplot('timeevolution_particle.json', '#plot-timeevolution-particle', 'Time Evolution (Particle)');
+createplot('multiplication.json', '#plot-multiplication', 'Multiplication');
+createplot('expect_state.json', '#plot-expect-state', 'Expectation Value (State Vector)');
+createplot('expect_operator.json', '#plot-expect-operator', 'Expectation Value (Density Operator)');
+createplot('coherentstate.json', '#plot-coherentstate', 'Coherent State Performance');
+createplot('ptrace.json', '#plot-ptrace', 'Partial Trace Performance');
+createplot('qfunc_state.json', '#plot-qfunc-state', 'Q-Function for State Vectors');
+createplot('qfunc_operator.json', '#plot-qfunc-operator', 'Q-Function for Density Operators');
+createplot('variance_operator.json', '#plot-variance-operator', 'Variance (Density Operator)');
+createplot('variance_state.json', '#plot-variance-state', 'Variance (State Vector)');
