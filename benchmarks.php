@@ -8,28 +8,50 @@
                 <h1 class="page-header">
                    Benchmarks
                 </h1>
-                
+
                 <p>Benchmark tests are conducted with the following set of test programs found on the <a href="https://github.com/bastikr/QuantumOpticsFrameworks-Benchmarks">Quantum Optics Frameworks Benchmark Repo</a></p>.
             </div>
         </div>
-        <div class="row"> 
-            <div class="col-md-8 col-md-offset-2">
+        <div class="row">
+            <div class="col-md-6">
             	<canvas id="plot-timeevolution-master"></canvas>
+            </div>
+            <div class="col-md-6">
+                <canvas id="plot-timeevolution-particle"></canvas>
+            </div>
+            <div class="col-md-6">
+                <canvas id="plot-timeevolution-timedependent"></canvas>
             </div>
         </div>
         <div class="row">
-	        <div class="col-md-6">
-            	<canvas id="plot-timeevolution-particle"></canvas>
+            <div class="col-md-6">
+            	<canvas id="plot-multiplication-sparse-sparse"></canvas>
             </div>
             <div class="col-md-6">
-            	<canvas id="plot-multiplication"></canvas>
+                <canvas id="plot-multiplication-sparse-dense"></canvas>
             </div>
+            <div class="col-md-6">
+                <canvas id="plot-multiplication-dense-sparse"></canvas>
+            </div>
+            <div class="col-md-6">
+                <canvas id="plot-multiplication-dense-dense"></canvas>
+            </div>
+        </div>
+        <div class="row">
             <div class="col-md-6">
             	<canvas id="plot-expect-state"></canvas>
             </div>
 	        <div class="col-md-6">
             	<canvas id="plot-expect-operator"></canvas>
             </div>
+            <div class="col-md-6">
+                <canvas id="plot-variance-state"></canvas>
+            </div>
+            <div class="col-md-6">
+                <canvas id="plot-variance-operator"></canvas>
+            </div>
+        </div>
+        <div class="row">
              <div class="col-md-6">
             	<canvas id="plot-coherentstate"></canvas>
             </div>
@@ -42,13 +64,8 @@
 	        <div class="col-md-6">
             	<canvas id="plot-qfunc-operator"></canvas>
             </div>
-             <div class="col-md-6">
-            	<canvas id="plot-variance-state"></canvas>
-            </div>
-	        <div class="col-md-6">
-            	<canvas id="plot-variance-operator"></canvas>
-            </div>
+
         </div>
     </div>
-           
+
  <?php include('footer.html'); ?>
