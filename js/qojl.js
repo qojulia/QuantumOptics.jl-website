@@ -61,7 +61,7 @@ function chartconfig (data, charttitle) {
 	            yAxes: [{
 	                scaleLabel: {
 		                display: true,
-		                labelString: 'Ellapsed Time'
+		                labelString: 'Elapsed Time'
 	                }
 
 	            }]
