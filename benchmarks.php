@@ -35,8 +35,10 @@
 
         <div class="row">
             <div class="tabcontent", id="timeevolution1">
-                <h3>Pumped cavity-mode with photon loss (Master equation)</h3>
-                <p>
+                <div class="tabcontentheader">
+                    <h2>Pumped cavity-mode with photon loss (Master equation)</h2>
+                </div>
+                <div class="tabcontentbody">
                     A cavity mode, modeled as a fock space with a certain cutoff, is driven on resonance with a classical laser. Since photon loss is included, the system is an open system and evolves according to a master equation
 
                     <!-- \dot{\rho} = -\frac{i}{\hbar} \big[H,\rho\big] +  \kappa\big(a\rho a^\dagger - \frac{1}{2} a^\dagger a \rho - \frac{1}{2} \rho a^\dagger a \big) -->
@@ -48,15 +50,12 @@
                     <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">  <mi>H</mi>  <mo>=</mo>  <mi>&#x03B7;<!-- η --></mi>  <mo stretchy="false">(</mo>  <mi>a</mi>  <mo>+</mo>  <msup>    <mi>a</mi>    <mo>&#x2020;<!-- † --></mo>  </msup>  <mo stretchy="false">)</mo><mo>.</mo></math>
 
                     This benchmark measures the time it takes to create all necessary operators and states, perform a time-evolution according to a master equation and calculate the expectation value of the number operator at certain times.
-                </p>
-                <p>
-                    <div class="col-md-10">
+                    <!-- <div class="col-md-10"> -->
+                        <h3>Benchmark results</h3>
                     	<canvas id="plot-timeevolution-master"></canvas>
-                    </div>
-                </p>
-                <p>
-                    <div class="col-md-8">
-                        <h4>Source-code</h4>
+                    <!-- </div> -->
+                    <!-- <div class="col-md-8"> -->
+                        <h3>Source-code</h3>
                         <button class="accordion">QuantumOptics.jl</button>
                         <div class="panel">
                             <?php include('benchmarks-sourcecode/timeevolution_master_jl.html'); ?>
@@ -69,45 +68,44 @@
                         <div class="panel">
                         <?php include('benchmarks-sourcecode/timeevolution_master_m.html'); ?>
                         </div>
-                    </div>
-                </p>
+                </div>
+                    <!-- </div> -->
             </div>
         </div>
 
         <div class="row">
             <div class="tabcontent", id="timeevolution2">
-                <h3>Pumped cavity-mode with photon loss (Time-dependent Master equation)</h3>
-                <p>
+                <div class="tabcontentheader">
+                    <h2>Pumped cavity-mode with photon loss (Time-dependent Master equation)</h2>
+                </div>
+                <div class="tabcontentbody">
                     Revisiting the first example, the system is now simulated without using the rotating frame of the driving laser. The pumping term then becomes time dependent and the Hamiltonian is
 
                     <!-- H(t) = \omega_c a^\dagger a + \eta \big(a e^{i\omega t} + a^\dagger e^{-i \omega t}\big). -->
                     <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mi>H</mi><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo><mo>=</mo><msub>  <mi>&#x03C9;<!-- ω --></mi>  <mi>c</mi></msub><msup>  <mi>a</mi>  <mo>&#x2020;<!-- † --></mo></msup><mi>a</mi><mo>+</mo><mi>&#x03B7;<!-- η --></mi><mrow class="MJX-TeXAtom-ORD">  <mo maxsize="1.2em" minsize="1.2em">(</mo></mrow><mi>a</mi><msup>  <mi>e</mi>  <mrow class="MJX-TeXAtom-ORD">    <mi>i</mi>    <mi>&#x03C9;<!-- ω --></mi>    <mi>t</mi>  </mrow></msup><mo>+</mo><msup>  <mi>a</mi>  <mo>&#x2020;<!-- † --></mo></msup><msup>  <mi>e</mi>  <mrow class="MJX-TeXAtom-ORD">    <mo>&#x2212;<!-- − --></mo>    <mi>i</mi>    <mi>&#x03C9;<!-- ω --></mi>    <mi>t</mi>  </mrow></msup><mrow class="MJX-TeXAtom-ORD">  <mo maxsize="1.2em" minsize="1.2em">)</mo></mrow><mo>.</mo></math>
-                </p>
-                <p>
-                <div class="col-md-8">
+
+                    <h3>Benchmark results</h3>
                     <canvas id="plot-timeevolution-timedependent"></canvas>
-                </div>
-                </p>
-                <p>
-                    <div class="col-md-8">
-                        <h4>Source-code</h4>
-                        <button class="accordion">QuantumOptics.jl</button>
-                        <div class="panel">
-                            <?php include('benchmarks-sourcecode/timeevolution_timedependent_jl.html'); ?>
-                        </div>
-                        <button class="accordion">QuTiP</button>
-                        <div class="panel">
-                            <?php include('benchmarks-sourcecode/timeevolution_timedependent_py.html'); ?>
-                        </div>
+
+                    <h3>Source-code</h3>
+                    <button class="accordion">QuantumOptics.jl</button>
+                    <div class="panel">
+                        <?php include('benchmarks-sourcecode/timeevolution_timedependent_jl.html'); ?>
                     </div>
-                </p>
+                    <button class="accordion">QuTiP</button>
+                    <div class="panel">
+                        <?php include('benchmarks-sourcecode/timeevolution_timedependent_py.html'); ?>
+                    </div>
+                </div>
             </div>
         </div>
 
         <div class="row">
             <div class="tabcontent", id="timeevolution3">
-                <h3>Particle in harmonic trap (Schrödinger equation)</h3>
-                <p>
+                <div class="tabcontentheader">
+                    <h2>Particle in harmonic trap (Schrödinger equation)</h2>
+                </div>
+                <div class="tabcontentbody">
                     A discretized position space is used to simulate the movement of an, initially gaussian, wave-packet in an harmonic trap potential according to the Schrödinger equation
 
                     <!-- i\hbar\frac{\mathrm{d}}{\mathrm{d} t} |\Psi(t)\rangle = H |\Psi(t)\rangle -->
@@ -119,79 +117,118 @@
                     <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mi>H</mi><mo>=</mo><msup>  <mi>p</mi>  <mn>2</mn></msup><mo>+</mo><mn>2</mn><mo>&#x2217;<!-- ∗ --></mo><msup>  <mi>x</mi>  <mn>2</mn></msup> <mo>.</mo></math>
 
                     This benchmark measures only the time it takes to perform the time-evolution and calculating the expectation values. Creating all necessary operators and states is done separately.
-                </p>
-                <p>
-                    <div class="col-md-8">
-                        <canvas id="plot-timeevolution-particle"></canvas>
+
+                    <h3>Benchmark results</h3>
+                    <canvas id="plot-timeevolution-particle"></canvas>
+
+                    <h3>Source-code</h3>
+                    <button class="accordion">QuantumOptics.jl</button>
+                    <div class="panel">
+                        <?php include('benchmarks-sourcecode/timeevolution_particle_jl.html'); ?>
                     </div>
-                </p>
-                <p>
-                    <div class="col-md-8">
-                        <h4>Source-code</h4>
-                        <button class="accordion">QuantumOptics.jl</button>
-                        <div class="panel">
-                            <?php include('benchmarks-sourcecode/timeevolution_particle_jl.html'); ?>
-                        </div>
-                        <button class="accordion">QuTiP</button>
-                        <div class="panel">
-                            <?php include('benchmarks-sourcecode/timeevolution_particle_py.html'); ?>
-                        </div>
+                    <button class="accordion">QuTiP</button>
+                    <div class="panel">
+                        <?php include('benchmarks-sourcecode/timeevolution_particle_py.html'); ?>
                     </div>
-                </p>
+                </div>
             </div>
         </div>
 
         <div class="row">
             <div class="tabcontent", id="expectationvalues">
-                <h3>
-                <div class="col-md-5">
-                	<canvas id="plot-expect-state"></canvas>
-                </div>
-    	        <div class="col-md-5">
-                	<canvas id="plot-expect-operator"></canvas>
-                </div>
-                <div class="col-md-5">
-                    <canvas id="plot-variance-state"></canvas>
-                </div>
-                <div class="col-md-5">
-                    <canvas id="plot-variance-operator"></canvas>
-                </div>
-                <div class="col-md-5">
-                    <canvas id="plot-ptrace"></canvas>
+                <div class="tabcontentbody">
+                    <div class="container">
+                        <div class="row">
+                            <h3>Expectation values</h3>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                            	<canvas id="plot-expect-state"></canvas>
+                            </div>
+                	        <div class="col-md-6">
+                            	<canvas id="plot-expect-operator"></canvas>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <h3>Variances</h3>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <canvas id="plot-variance-state"></canvas>
+                            </div>
+                            <div class="col-md-6">
+                                <canvas id="plot-variance-operator"></canvas>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <h3>Partial trace</h3>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <canvas id="plot-ptrace"></canvas>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
         <div class="row">
             <div class="tabcontent", id="qfunc">
-                 <div class="col-md-5">
-                	<canvas id="plot-coherentstate"></canvas>
-                </div>
-                 <div class="col-md-5">
-                	<canvas id="plot-qfunc-state"></canvas>
-                </div>
-    	        <div class="col-md-5">
-                	<canvas id="plot-qfunc-operator"></canvas>
+                <div class="tabcontentbody">
+                    <div class="container">
+                        <div class="row">
+                            <h3>Coherent states</h3>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                            	<canvas id="plot-coherentstate"></canvas>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <h3>Q-function</h3>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                            	<canvas id="plot-qfunc-state"></canvas>
+                            </div>
+                            <div class="col-md-6">
+                            	<canvas id="plot-qfunc-operator"></canvas>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
         <div class="row">
             <div class="tabcontent", id="multiplication">
-                <div class="col-md-5">
-                    <canvas id="plot-multiplication-sparse-sparse"></canvas>
-                </div>
-                <div class="col-md-5">
-                    <canvas id="plot-multiplication-sparse-dense"></canvas>
-                </div>
-                <div class="col-md-5">
-                    <canvas id="plot-multiplication-dense-sparse"></canvas>
-                </div>
-                <div class="col-md-5">
-                    <canvas id="plot-multiplication-dense-dense"></canvas>
+                <div class="tabcontentbody">
+                    <div class="container">
+                        <div class="row">
+                            <h3>Matrix-Matrix multiplication</h3>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <canvas id="plot-multiplication-sparse-sparse"></canvas>
+                            </div>
+                            <div class="col-md-6">
+                                <canvas id="plot-multiplication-sparse-dense"></canvas>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <canvas id="plot-multiplication-dense-sparse"></canvas>
+                            </div>
+                            <div class="col-md-6">
+                                <canvas id="plot-multiplication-dense-dense"></canvas>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+
         <div class="row">
             <div class="col-lg-12">
                 <h1 class="page-header">
