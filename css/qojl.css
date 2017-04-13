@@ -78,16 +78,27 @@ div.tab button.active {
 }
 
 /* Style the tab content */
+
 .tabcontent {
     display: none;
-    padding: 6px 12px;
-    /*border: 1px solid #ccc;*/
+    border: 1px solid #ccc;
     border-top: none;
 }
 
 .tabcontent {
     -webkit-animation: fadeEffect 0.5s;
     animation: fadeEffect 0.5s;
+}
+
+.tabcontentheader {
+    border: 1px solid #ccc;
+    border-top: none;
+    padding: 4px 15px;
+    background-color: #efefef;
+}
+
+.tabcontentbody {
+    padding: 10px 15px;
 }
 
 @-webkit-keyframes fadeEffect {
