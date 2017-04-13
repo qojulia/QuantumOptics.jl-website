@@ -1,0 +1,23 @@
+<div class="highlight"><pre><span></span><span class="c1"># System parameters</span>
+<span class="n">omega</span> <span class="o">=</span> <span class="mf">1.89</span>  <span class="c1"># Frequency of driving laser</span>
+<span class="n">omega_c</span> <span class="o">=</span> <span class="mf">2.13</span>  <span class="c1"># Cavity frequency</span>
+<span class="n">eta</span> <span class="o">=</span> <span class="mf">0.76</span>  <span class="c1"># Pump strength</span>
+<span class="n">kappa</span> <span class="o">=</span> <span class="mf">0.34</span>  <span class="c1"># Decay rate</span>
+
+
+<span class="c1"># Benchmark</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">qt</span><span class="o">.</span><span class="n">destroy</span><span class="p">(</span><span class="n">Ncutoff</span><span class="p">)</span>
+<span class="n">at</span> <span class="o">=</span> <span class="n">qt</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">Ncutoff</span><span class="p">)</span>
+<span class="n">n</span> <span class="o">=</span> <span class="n">qt</span><span class="o">.</span><span class="n">num</span><span class="p">(</span><span class="n">Ncutoff</span><span class="p">)</span>
+
+<span class="n">J</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">kappa</span><span class="p">)</span><span class="o">*</span><span class="n">a</span><span class="p">]</span>
+
+<span class="n">alpha0</span> <span class="o">=</span> <span class="mf">0.3</span> <span class="o">-</span> <span class="mf">0.5j</span>
+<span class="n">psi0</span> <span class="o">=</span> <span class="n">qt</span><span class="o">.</span><span class="n">coherent</span><span class="p">(</span><span class="n">Ncutoff</span><span class="p">,</span> <span class="n">alpha0</span><span class="p">)</span>
+
+<span class="n">tlist</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">10.</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
+<span class="n">H</span> <span class="o">=</span> <span class="p">[</span><span class="n">omega_c</span><span class="o">*</span><span class="n">n</span><span class="p">,</span>
+        <span class="p">[</span><span class="n">eta</span><span class="o">*</span><span class="n">a</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">t</span><span class="p">,</span> <span class="n">args</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1j</span><span class="o">*</span><span class="n">omega</span><span class="o">*</span><span class="n">t</span><span class="p">)],</span>
+        <span class="p">[</span><span class="n">eta</span><span class="o">*</span><span class="n">at</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">t</span><span class="p">,</span> <span class="n">args</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">1j</span><span class="o">*</span><span class="n">omega</span><span class="o">*</span><span class="n">t</span><span class="p">)]]</span>
+<span class="n">alpha_t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">qt</span><span class="o">.</span><span class="n">mesolve</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="n">psi0</span><span class="p">,</span> <span class="n">tlist</span><span class="p">,</span> <span class="n">J</span><span class="p">,</span> <span class="p">[</span><span class="n">a</span><span class="p">],</span> <span class="n">options</span><span class="o">=</span><span class="n">options</span><span class="p">)</span><span class="o">.</span><span class="n">expect</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>

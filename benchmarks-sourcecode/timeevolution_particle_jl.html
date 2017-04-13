@@ -1,0 +1,22 @@
+<div class="highlight"><pre><span></span><span class="n">xmin</span> <span class="o">=</span> <span class="o">-</span><span class="mi">10</span>
+<span class="n">xmax</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="n">x0</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">p0</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">sigma0</span> <span class="o">=</span> <span class="mi">1</span>
+
+
+<span class="c"># Setup</span>
+<span class="n">bx</span> <span class="o">=</span> <span class="n">PositionBasis</span><span class="p">(</span><span class="n">xmin</span><span class="p">,</span> <span class="n">xmax</span><span class="p">,</span> <span class="n">Npoints</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">position</span><span class="p">(</span><span class="n">bx</span><span class="p">)</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">momentum</span><span class="p">(</span><span class="n">bx</span><span class="p">)</span>
+<span class="n">H</span> <span class="o">=</span> <span class="n">p</span><span class="o">^</span><span class="mi">2</span> <span class="o">+</span> <span class="n">full</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">psi0</span> <span class="o">=</span> <span class="n">gaussianstate</span><span class="p">(</span><span class="n">bx</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">p0</span><span class="p">,</span> <span class="n">sigma0</span><span class="p">)</span>
+
+
+<span class="c"># Benchmark</span>
+<span class="n">T</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="o">:</span><span class="mf">1.</span><span class="o">:</span><span class="mi">10</span><span class="p">;]</span>
+<span class="n">exp_x</span> <span class="o">=</span> <span class="kt">Float64</span><span class="p">[]</span>
+<span class="n">fout</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">psi</span><span class="p">)</span> <span class="o">=</span> <span class="n">push!</span><span class="p">(</span><span class="n">exp_x</span><span class="p">,</span> <span class="n">real</span><span class="p">(</span><span class="n">expect</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">psi</span><span class="p">)))</span>
+<span class="n">timeevolution</span><span class="o">.</span><span class="n">schroedinger</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">psi0</span><span class="p">,</span> <span class="n">H</span><span class="p">;</span> <span class="n">fout</span><span class="o">=</span><span class="n">fout</span><span class="p">,</span> <span class="n">reltol</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">,</span> <span class="n">abstol</span><span class="o">=</span><span class="mf">1e-8</span><span class="p">)</span>
+</pre></div>
