@@ -48,6 +48,9 @@ function chartconfig (data, charttitle) {
 		    title: {
 			    display: true,
 				text: charttitle,
+				fontSize: 14,
+				fontStyle: 'normal',
+				fontColor: "#333333"
 				},
 	        scales: {
 	            xAxes: [{
@@ -55,13 +58,17 @@ function chartconfig (data, charttitle) {
 		            position: 'bottom',
 	                scaleLabel: {
 		                display: true,
-		                labelString: 'Hilbert-Space Dimension'
+		                labelString: 'Hilbert-Space Dimension',
+		                fontSize: 14,
+						fontStyle: 'normal',
 	                }
 	            }],
 	            yAxes: [{
 	                scaleLabel: {
 		                display: true,
-		                labelString: 'Elapsed Time'
+		                labelString: 'Elapsed Time [seconds]',
+		                fontSize: 14,
+						fontStyle: 'normal',
 	                }
 
 	            }]

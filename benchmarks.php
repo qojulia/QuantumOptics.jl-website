@@ -52,7 +52,9 @@
                     This benchmark measures the time it takes to create all necessary operators and states, perform a time-evolution according to a master equation and calculate the expectation value of the number operator at certain times.
                     <!-- <div class="col-md-10"> -->
                         <h3>Benchmark results</h3>
-                    	<canvas id="plot-timeevolution-master"></canvas>
+                        <div class="singleplot">
+                    	   <canvas id="plot-timeevolution-master" width="4", height="3"></canvas>
+                        </div>
                     <!-- </div> -->
                     <!-- <div class="col-md-8"> -->
                         <h3>Source-code</h3>
@@ -85,7 +87,9 @@
                     <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mi>H</mi><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo><mo>=</mo><msub>  <mi>&#x03C9;<!-- ω --></mi>  <mi>c</mi></msub><msup>  <mi>a</mi>  <mo>&#x2020;<!-- † --></mo></msup><mi>a</mi><mo>+</mo><mi>&#x03B7;<!-- η --></mi><mrow class="MJX-TeXAtom-ORD">  <mo maxsize="1.2em" minsize="1.2em">(</mo></mrow><mi>a</mi><msup>  <mi>e</mi>  <mrow class="MJX-TeXAtom-ORD">    <mi>i</mi>    <mi>&#x03C9;<!-- ω --></mi>    <mi>t</mi>  </mrow></msup><mo>+</mo><msup>  <mi>a</mi>  <mo>&#x2020;<!-- † --></mo></msup><msup>  <mi>e</mi>  <mrow class="MJX-TeXAtom-ORD">    <mo>&#x2212;<!-- − --></mo>    <mi>i</mi>    <mi>&#x03C9;<!-- ω --></mi>    <mi>t</mi>  </mrow></msup><mrow class="MJX-TeXAtom-ORD">  <mo maxsize="1.2em" minsize="1.2em">)</mo></mrow><mo>.</mo></math>
 
                     <h3>Benchmark results</h3>
-                    <canvas id="plot-timeevolution-timedependent"></canvas>
+                    <div class="singleplot">
+                        <canvas id="plot-timeevolution-timedependent" width="4", height="3"></canvas>
+                    </div>
 
                     <h3>Source-code</h3>
                     <button class="accordion">QuantumOptics.jl</button>
@@ -119,7 +123,7 @@
                     This benchmark measures only the time it takes to perform the time-evolution and calculating the expectation values. Creating all necessary operators and states is done separately.
 
                     <h3>Benchmark results</h3>
-                    <canvas id="plot-timeevolution-particle"></canvas>
+                    <canvas id="plot-timeevolution-particle" width="4", height="3"></canvas>
 
                     <h3>Source-code</h3>
                     <button class="accordion">QuantumOptics.jl</button>
@@ -143,10 +147,10 @@
                         </div>
                         <div class="row">
                             <div class="col-md-6">
-                            	<canvas id="plot-expect-state"></canvas>
+                            	<canvas id="plot-expect-state" width="4", height="3"></canvas>
                             </div>
                 	        <div class="col-md-6">
-                            	<canvas id="plot-expect-operator"></canvas>
+                            	<canvas id="plot-expect-operator" width="4", height="3"></canvas>
                             </div>
                         </div>
                         <div class="row">
@@ -154,10 +158,10 @@
                         </div>
                         <div class="row">
                             <div class="col-md-6">
-                                <canvas id="plot-variance-state"></canvas>
+                                <canvas id="plot-variance-state" width="4", height="3"></canvas>
                             </div>
                             <div class="col-md-6">
-                                <canvas id="plot-variance-operator"></canvas>
+                                <canvas id="plot-variance-operator" width="4", height="3"></canvas>
                             </div>
                         </div>
                         <div class="row">
@@ -165,7 +169,7 @@
                         </div>
                         <div class="row">
                             <div class="col-md-6">
-                                <canvas id="plot-ptrace"></canvas>
+                                <canvas id="plot-ptrace" width="4", height="3"></canvas>
                             </div>
                         </div>
                     </div>
@@ -182,7 +186,7 @@
                         </div>
                         <div class="row">
                             <div class="col-md-6">
-                            	<canvas id="plot-coherentstate"></canvas>
+                            	<canvas id="plot-coherentstate" width="4", height="3"></canvas>
                             </div>
                         </div>
                         <div class="row">
@@ -190,10 +194,10 @@
                         </div>
                         <div class="row">
                             <div class="col-md-6">
-                            	<canvas id="plot-qfunc-state"></canvas>
+                            	<canvas id="plot-qfunc-state" width="4", height="3"></canvas>
                             </div>
                             <div class="col-md-6">
-                            	<canvas id="plot-qfunc-operator"></canvas>
+                            	<canvas id="plot-qfunc-operator" width="4", height="3"></canvas>
                             </div>
                         </div>
                     </div>
@@ -210,18 +214,18 @@
                         </div>
                         <div class="row">
                             <div class="col-md-6">
-                                <canvas id="plot-multiplication-sparse-sparse"></canvas>
+                                <canvas id="plot-multiplication-sparse-sparse" width="4", height="3"></canvas>
                             </div>
                             <div class="col-md-6">
-                                <canvas id="plot-multiplication-sparse-dense"></canvas>
+                                <canvas id="plot-multiplication-sparse-dense" width="4", height="3"></canvas>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-6">
-                                <canvas id="plot-multiplication-dense-sparse"></canvas>
+                                <canvas id="plot-multiplication-dense-sparse" width="4", height="3"></canvas>
                             </div>
                             <div class="col-md-6">
-                                <canvas id="plot-multiplication-dense-dense"></canvas>
+                                <canvas id="plot-multiplication-dense-dense" width="4", height="3"></canvas>
                             </div>
                         </div>
                     </div>
