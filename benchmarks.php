@@ -99,7 +99,10 @@
 
  <?php include('footer.html'); ?>
 
+<script src="js/chart.bundle.min.js"></script>
+<script src="js/qojl.js"></script>
 <script>
-// Get the element with id="defaultOpen" and click on it
+    // Open default tab
     document.getElementById("defaultOpen").click();
 </script>
+<script src="js/chart.bundle.min.js"></script>
