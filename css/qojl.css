@@ -31,18 +31,8 @@ footer p {
 	margin: 0;
 }
 
-canvas {
-	padding: 20px 0;
-}
-
-div.singleplot {
-    /*margin: auto;*/
-    margin-left: 20%;
-    margin-right: 20%;
-}
-
 #features .fa-lg {
-	/*font-size: 200px;*/
+	font-size: 100px;
 }
 
 #features #feature1 {
@@ -55,89 +45,18 @@ div.singleplot {
 	color: #6cac5b;
 }
 
-/* Style the tab */
-div.tab {
-    overflow: hidden;
-    border: 1px solid #ccc;
-    background-color: #f1f1f1;
+.panel-heading h4 a {
+	color: #ffffff;
 }
 
-/* Style the buttons inside the tab */
-div.tab button {
-    background-color: inherit;
-    float: left;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    padding: 14px 16px;
-    transition: 0.3s;
+.panel-jl .panel-heading {
+	background: #d66761;
 }
 
-/* Change background color of buttons on hover */
-div.tab button:hover {
-    background-color: #ddd;
+.panel-py .panel-heading {
+	background: #a87db6;
 }
 
-/* Create an active/current tablink class */
-div.tab button.active {
-    background-color: #ccc;
-}
-
-/* Style the tab content */
-
-.tabcontent {
-    display: none;
-    border: 1px solid #ccc;
-    border-top: none;
-}
-
-.tabcontent {
-    -webkit-animation: fadeEffect 0.5s;
-    animation: fadeEffect 0.5s;
-}
-
-.tabcontentheader {
-    border-bottom: 1px solid #ccc;
-    padding: 4px 15px;
-    background-color: #efefef;
-}
-
-.tabcontentbody {
-    padding: 10px 15px;
-}
-
-@-webkit-keyframes fadeEffect {
-    from {opacity: 0;}
-    to {opacity: 1;}
-}
-
-@keyframes fadeEffect {
-    from {opacity: 0;}
-    to {opacity: 1;}
-}
-
-/* Style the buttons that are used to open and close the accordion panel */
-button.accordion {
-    background-color: #eee;
-    color: #444;
-    cursor: pointer;
-    padding: 18px;
-    width: 100%;
-    text-align: left;
-    margin: 2px;
-    border: 1px solid #ccc;
-    outline: none;
-    transition: 0.4s;
-}
-
-/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
-button.accordion.active, button.accordion:hover {
-    background-color: #ddd;
-}
-
-/* Style the accordion panel. Note: hidden by default */
-div.panel {
-    padding: 0 18px;
-    background-color: white;
-    display: none;
+.panel-m .panel-heading {
+	background: #6cac5b;
 }
