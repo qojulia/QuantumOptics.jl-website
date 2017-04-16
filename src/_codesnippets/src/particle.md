@@ -1,4 +1,4 @@
-```julia
+```@example
 using QuantumOptics
 using PyPlot
 

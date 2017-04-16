@@ -62,7 +62,7 @@ layout: default
         </div>
         <div class="row">
             <div class="col-md-5">
-            {% capture example %}{% include particle.md %}{% endcapture %}
+            {% capture example %}{% include_relative _codesnippets/build/particle.md %}{% endcapture %}
             {{ example | markdownify }}
 
             </div>
@@ -72,9 +72,8 @@ layout: default
         </div>
         <div class="row">
             <div class="col-md-5">
-            {% capture example %}{% include fock.md %}{% endcapture %}
+            {% capture example %}{% include_relative _codesnippets/build/fock.md %}{% endcapture %}
             {{ example | markdownify }}
-                <!-- <?php include('showcaseexamples-sourcecode/fock.html'); ?> -->
             </div>
             <div class="col-md-5">
                 <img class="img-responsive" src="images/fock.svg" alt="">
