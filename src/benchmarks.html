@@ -73,7 +73,7 @@ layout: default
 </div>
 <div id="timeevolution1-jl" class="panel-collapse collapse" role="tabpanel">
   <div class="panel-body">
-      <?php include('benchmarks-sourcecode/timeevolution_master_jl.html'); ?>
+<pre><code class="language-julia">{% include_relative _benchmarks-sourcecode/timeevolution_master.jl %}</code></pre>
   </div>
 
 </div>
@@ -88,7 +88,7 @@ layout: default
 </div>
 <div id="timeevolution1-py" class="panel-collapse collapse" role="tabpanel">
   <div class="panel-body">
-      <?php include('benchmarks-sourcecode/timeevolution_master_py.html'); ?>
+<pre><code class="language-python">{% include_relative _benchmarks-sourcecode/timeevolution_master.py %}</code></pre>
   </div>
 
 </div>
@@ -103,7 +103,7 @@ layout: default
 </div>
 <div id="timeevolution1-m" class="panel-collapse collapse" role="tabpanel">
   <div class="panel-body">
-      <?php include('benchmarks-sourcecode/timeevolution_master_m.html'); ?>
+<pre><code class="language-matlab">{% include_relative _benchmarks-sourcecode/timeevolution_master.m %}</code></pre>
   </div>
 
 </div>
@@ -150,7 +150,7 @@ layout: default
 </div>
 <div id="timeevolution2-jl" class="panel-collapse collapse" role="tabpanel">
   <div class="panel-body">
-      <?php include('benchmarks-sourcecode/timeevolution_timedependent_jl.html'); ?>
+<pre><code class="language-julia">{% include_relative _benchmarks-sourcecode/timeevolution_timedependent.py %}</code></pre>
   </div>
 
 </div>
@@ -165,7 +165,7 @@ layout: default
 </div>
 <div id="timeevolution2-py" class="panel-collapse collapse" role="tabpanel">
   <div class="panel-body">
-      <?php include('benchmarks-sourcecode/timeevolution_timedependent_py.html'); ?>
+<pre><code class="language-python">{% include_relative _benchmarks-sourcecode/timeevolution_timedependent.py %}</code></pre>
   </div>
 
 </div>
@@ -217,7 +217,7 @@ layout: default
 </div>
 <div id="timeevolution3-jl" class="panel-collapse collapse" role="tabpanel">
   <div class="panel-body">
-      <?php include('benchmarks-sourcecode/timeevolution_particle_jl.html'); ?>
+<pre><code class="language-julia">{% include_relative _benchmarks-sourcecode/timeevolution_particle.jl %}</code></pre>
   </div>
 
 </div>
@@ -232,7 +232,7 @@ layout: default
 </div>
 <div id="timeevolution3-py" class="panel-collapse collapse" role="tabpanel">
   <div class="panel-body">
-      <?php include('benchmarks-sourcecode/timeevolution_particle_py.html'); ?>
+<pre><code class="language-python">{% include_relative _benchmarks-sourcecode/timeevolution_particle.py %}</code></pre>
   </div>
 
 </div>
@@ -350,7 +350,3 @@ layout: default
                     </div>
     </div>
 </div>
-
-<!-- Charting JavaScript -->
-<script src="/js/chart.bundle.min.js"></script>
-<script src="/js/qojl.js"></script>
