@@ -1,2 +1,4 @@
 source: src
 destination: build
+kramdown:
+  syntax_highlighter: nil
