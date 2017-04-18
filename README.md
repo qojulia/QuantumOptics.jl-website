@@ -35,11 +35,28 @@ CSS:
 A basic principle is that any code that is shown should be run and tested automatically before it is included.
 
 
+## Directory layout
+
+It is recommended to place all resources into the same directory, i.e.:
+
+    |
+    |--> ./QuantumOptics.jl
+    |--> ./QuantumOptics.jl-examples
+    |--> ./QuantumOptics.jl-documentation
+    |--> ./QuantumOptics.jl-benchmarks
+    |--> ./QuantumOptics.jl-website
+
+
+## Software Requirements
+
+* [Jekyll](https://jekyllrb.com)
+
+
 ## Build process
 
 * Build documentation in `QuantumOptics.jl-documentation`. Output will automatically be copied into `/src/documentation`.
-* Run benchmarks and copy results into `src/benchmark-data`. Code of the benchmarks has to be manually copied to _benchmarks-sourcecode. This process is not automated yet but definitely should be in the future.
-* Create code snippets (which then are shown in the main page) with `make.jl` in src/_codesnippets.
+* Run benchmarks and copy results into `src/benchmark-data`. Code of the benchmarks has to be manually copied to _benchmarks-sourcecode. This process is not automated yet but definitely should be in the future. Therefor, this step can be skipped for the moment since these files are temporarily already included in the website repository.
+* Create code snippets (which then are shown in the main page) with `julia make.jl` in src/_codesnippets.
 * Use jekyll to build website:
     * For development run jekyll interactively: `jekyll serve`
     * To just create it once: `jekyll build`
