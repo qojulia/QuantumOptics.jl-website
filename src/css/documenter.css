@@ -240,7 +240,7 @@ nav.toc li.current > .toctext {
 article {
     margin-left: 20em;
     min-width: 20em;
-    max-width: 48em;
+    max-width: 100%;
     padding: 2em;
 }
 
