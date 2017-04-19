@@ -9,7 +9,7 @@
 <link href="/css/bootstrap.min.css" rel="stylesheet">
 <!-- Custom CSS -->
 <link href="/css/qojl.css" rel="stylesheet">
-<link href="/css/sourcecode.css" rel="stylesheet">
+
 <!-- Custom Fonts -->
 <link href="/css/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -18,3 +18,11 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
+
+{% if page.type == "documentation" %}
+<!-- Documentation -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css" rel="stylesheet" type="text/css" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.5.0/styles/default.min.css" rel="stylesheet" type="text/css" />
+<link href="https://fonts.googleapis.com/css?family=Lato|Ubuntu+Mono" rel="stylesheet" type="text/css" />
+<link href="/css/documenter.css" rel="stylesheet" type="text/css" />
+{% endif %}

@@ -242,6 +242,7 @@ article {
     min-width: 20em;
     max-width: 100%;
     padding: 2em;
+    padding-bottom: 6em;
 }
 
 article > header {}

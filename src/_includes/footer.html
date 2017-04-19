@@ -1,13 +1,28 @@
-<footer class="footer">
+<footer class="footer {% if page.type == "documentation" %} documentation {% endif %}">
     <p>Copyright &copy; 2017 qojulia.org</p>
 </footer>
+
 <!-- jQuery -->
 <script src="/js/jquery.js"></script>
 <!-- Bootstrap Core JavaScript -->
 <script src="/js/bootstrap.min.js"></script>
+
+{% if page.type == "benchmarks" %}
 <!-- Chart JS Library -->
 <script src="/js/chart.bundle.min.js"></script>
 <script src="/js/qojl.js"></script>
-<!-- Math Rendering JavaScript -->
+{% endif %}
 
+<!-- Math Rendering JavaScript -->
 <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'></script>
+
+{% if page.type == "documentation" %}
+<!-- Documentation Search -->
+<script>documenterBaseURL = "/documentation" </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.2.0/require.min.js" data-main="/js/documenter.js"></script>
+
+{% if page.search == true %}
+<script src="search_index.js"></script>
+<script src="/js/search.js"></script>
+{% endif %}
+{% endif %}
