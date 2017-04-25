@@ -402,3 +402,15 @@ article section.docstring a.source-link {
     background-color: transparent;
     padding: 0;
 }
+
+/* LO additions */
+
+nav.toc form {
+	background: #6b85dd;
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
+nav.toc form select {
+	display: none;
+} 
