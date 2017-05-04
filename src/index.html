@@ -20,9 +20,9 @@ layout: default
         <div class="row">
 
             <div class="col-md-10 col-md-offset-1">
-                    
+
                 <p class="lead text-center text-muted">QuantumOptics.jl is a numerical framework written in <a href="http://www.julialang.org">Julia</a> that makes it easy to simulate various kinds of open quantum systems. It is inspired by the <a href="http://qo.phy.auckland.ac.nz/toolbox/">Quantum Optics Toolbox</a> for MATLAB and the Python framework <a href="http://www.qutip.org">QuTiP</a>.</p>
-                
+
             </div>
         </div>
 
@@ -58,18 +58,18 @@ layout: default
         <div class="row">
             <div class="col-lg-12">
                 <h2 class="page-header"><i class="fa fa-arrow-circle-right"></i> Getting Started</h2>
-                
+
                 <p>To get started with Julia, check out <a href="https://docs.julialang.org/en/stable/manual/getting-started/">Julia's setup instructions</a>.</p>
-                
-                <pre>Pkg.add("QuantumOptics")	# add the package on initial run
-Pkg.add("PyPlot")		# add this package for plotting with MatPlotLib</pre>
+
+                <pre><code class="language-julia">Pkg.add("QuantumOptics")  # Install QuantumOptics.jl
+Pkg.add("PyPlot")  # Install Matplotlib</code></pre>
             </div>
         </div>
-        
+
         <div class="row">
 	        <div class="col-lg-12">
 		        <h2 class="page-header"><i class="fa fa-file-code-o"></i> Code Examples</h2>
-		        
+
 		        <ul class="nav nav-pills" role="tablist">
                 <li role="presentation" class="active"><a href="#example1" aria-controls="example1" role="tab" data-toggle="tab">Example 1</a></li>
                 <li role="presentation"><a href="#example2" aria-controls="example2" role="tab" data-toggle="tab">Example 2</a></li>
@@ -79,83 +79,18 @@ Pkg.add("PyPlot")		# add this package for plotting with MatPlotLib</pre>
            </ul>
 	        </div>
         </div>
-        
+
         <div class="row">
-        <div class="col-lg-12">
-        <div class="tab-content">
-            <div role="tabpanel" class="tab-pane fade in active" id="example1">
-                <div class="page-header">
-                    <h3>Example 1: Particle in harmonic trap</h3>
+            <div class="col-lg-12">
+                <div class="tab-content">
+                    {% include codesnippet.html id="example1" name="particle" imgname="particle.svg" title="Particle in harmonic trap"%}
+                    {% include codesnippet.html id="example2" name="fock" imgname="fock.png" title="Squeezed fock state" %}
+                    {% include codesnippet.html id="example3" name="spin" imgname="spin.svg" title="Spin 3/2 system" %}
+                    {% include codesnippet.html id="example4" name="nlevel" imgname="nlevel.svg" title="Three level system" %}
+                    {% include codesnippet.html id="example5" name="composite" imgname="composite.svg" title="Jaynes-Cummings system" %}
                 </div>
-
-                <div class="row">
-                    <div class="col-md-6">
-	                    
-	                    {% capture example %}
-	                    	{% include_relative _codesnippets/build/particle.md %}
-	                    {% endcapture %}
-						{{ example | markdownify }}
-					</div>
-                    <div class="col-md-6">
-                       <img class="img-responsive" src="/images/particle.svg" alt="">
-                    </div>
-                </div>
-            </div>
-
-            <div role="tabpanel" class="tab-pane fade" id="example2">
-                <div class="page-header">
-                    <h2>Example 2: Pumped lossy coherent state</h2>
-                </div>
-
-                <div class="row">
-                    <div class="col-md-6">
-
-					CODE HERE
-                </div>
-                    <div class="col-md-6">
-                       IMAGE HERE
-                    </div>
-                </div>
-            </div>
-
-            <div role="tabpanel" class="tab-pane fade" id="example3">
-                <div class="page-header">
-                    <h2>Example 3: TODO</h2>
-                </div>
-
-                <div class="row">
-                    <div class="col-md-6">
-                        CODE HERE
-                    </div>
-                    <div class="col-md-6">
-                       IMAGE HERE
-                    </div>
-                </div>
-            </div>
-
-            <div role="tabpanel" class="tab-pane fade" id="example4">
-                <div class="page-header">
-                    <h2>Example 4: TODO</h2>
-                </div>
-
-                CONTENT
-            </div>
-
-            <div role="tabpanel" class="tab-pane fade" id="example5">
-                <div class="page-header">
-                    <h2>Example 5: TODO</h2>
-                </div>
-
-
             </div>
         </div>
-        </div>
-</div>
-        
-        
-        
-        
-
 
         <!-- Open Source Section -->
         <div class="row">
