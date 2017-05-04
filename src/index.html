@@ -33,7 +33,7 @@ layout: default
                     <i class="fa fa-inverse fa-line-chart fa-stack-1x"></i>
                 </span>
                 <h3>Performance</h3>
-                <p class="text-left text-muted">QuantumOptics.jl optimizes processor and memory usage by intelligently using different ways to store and work with operators</p>
+                <p class="text-left text-muted">QuantumOptics.jl optimizes processor usage and memory consumption by relying different ways to store and work with operators</p>
             </div>
             <div class="col-md-4">
                 <span class="fa-stack fa-lg" id="feature2">
@@ -49,7 +49,7 @@ layout: default
                     <i class="fa fa-inverse fa-cogs fa-stack-1x"></i>
                 </span>
                 <h3>Reliability</h3>
-                <p class="text-left text-muted">Every function in the framework has been severely tested with all tests and their code coverage presented on the framework's GitHub page.</p>
+                <p class="text-left text-muted">Every function in the framework has been severely tested with all tests and their code coverage presented on the framework's <a href="https://github.com/qojulia/QuantumOptics.jl">GitHub page.</a></p>
             </div>
 
 
@@ -57,35 +57,104 @@ layout: default
 
         <div class="row">
             <div class="col-lg-12">
-                <h2 class="page-header"><i class="fa fa-file-code-o"></i> Getting Started with code example</h2>
+                <h2 class="page-header"><i class="fa fa-arrow-circle-right"></i> Getting Started</h2>
                 
-                <div class="alert alert-danger">
-	                <p><strong>Important!</strong> Before any of this code will run, you need to execute <code>Pkg.add("QuantumOptics")</code> once to add the framework to your Julia installation. If you are new to Julia, checkout <a href="https://docs.julialang.org/en/stable/manual/getting-started/" class="alert-link">Julia's Getting started</a> first and you should be up and running in less than five minutes!</p>
-                </div>
-				<div class="alert alert-info">
-					<p><strong>Plotting with Python.</strong> For the plotting functions to work, you will need a Python environment, the PyPlot Library and the Julia package <code>PyPlot</code>, which you can get by executing <code>Pkg.add(""PyPlot)</code> within Julia.</p>
-				</div>
+                <p>To get started with Julia, check out <a href="https://docs.julialang.org/en/stable/manual/getting-started/">Julia's setup instructions</a>.</p>
+                
+                <pre>Pkg.add("QuantumOptics")	# add the package on initial run
+Pkg.add("PyPlot")		# add this package for plotting with MatPlotLib</pre>
             </div>
         </div>
+        
         <div class="row">
-            <div class="col-md-5">
-            {% capture example %}{% include_relative _codesnippets/build/particle.md %}{% endcapture %}
-            {{ example | markdownify }}
+	        <div class="col-lg-12">
+		        <h2 class="page-header"><i class="fa fa-file-code-o"></i> Code Examples</h2>
+		        
+		        <ul class="nav nav-pills" role="tablist">
+                <li role="presentation" class="active"><a href="#example1" aria-controls="example1" role="tab" data-toggle="tab">Example 1</a></li>
+                <li role="presentation"><a href="#example2" aria-controls="example2" role="tab" data-toggle="tab">Example 2</a></li>
+                <li role="presentation"><a href="#example3" aria-controls="example3" role="tab" data-toggle="tab">Example 3</a></li>
+                <li role="presentation"><a href="#example4" aria-controls="example4" role="tab" data-toggle="tab">Example 4</a></li>
+                <li role="presentation"><a href="#example5" aria-controls="example5" role="tab" data-toggle="tab">Example 5</a></li>
+           </ul>
+	        </div>
+        </div>
+        
+        <div class="row">
+        <div class="col-lg-12">
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade in active" id="example1">
+                <div class="page-header">
+                    <h3>Example 1: Particle in harmonic trap</h3>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+	                    
+	                    {% capture example %}
+	                    	{% include_relative _codesnippets/build/particle.md %}
+	                    {% endcapture %}
+						{{ example | markdownify }}
+					</div>
+                    <div class="col-md-6">
+                       <img class="img-responsive" src="/images/particle.svg" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div role="tabpanel" class="tab-pane fade" id="example2">
+                <div class="page-header">
+                    <h2>Example 2: Pumped lossy coherent state</h2>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+
+					CODE HERE
+                </div>
+                    <div class="col-md-6">
+                       IMAGE HERE
+                    </div>
+                </div>
+            </div>
+
+            <div role="tabpanel" class="tab-pane fade" id="example3">
+                <div class="page-header">
+                    <h2>Example 3: TODO</h2>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        CODE HERE
+                    </div>
+                    <div class="col-md-6">
+                       IMAGE HERE
+                    </div>
+                </div>
+            </div>
+
+            <div role="tabpanel" class="tab-pane fade" id="example4">
+                <div class="page-header">
+                    <h2>Example 4: TODO</h2>
+                </div>
+
+                CONTENT
+            </div>
+
+            <div role="tabpanel" class="tab-pane fade" id="example5">
+                <div class="page-header">
+                    <h2>Example 5: TODO</h2>
+                </div>
+
 
             </div>
-            <div class="col-md-5">
-                <img class="img-responsive" src="/images/particle.svg" alt="">
-            </div>
         </div>
-        <div class="row">
-            <div class="col-md-5">
-            {% capture example %}{% include_relative _codesnippets/build/fock.md %}{% endcapture %}
-            {{ example | markdownify }}
-            </div>
-            <div class="col-md-5">
-                <img class="img-responsive" src="images/fock.svg" alt="">
-            </div>
         </div>
+</div>
+        
+        
+        
+        
 
 
         <!-- Open Source Section -->
@@ -96,8 +165,8 @@ layout: default
         </div>
         <div class="row">
             <div class="col-md-12">
-                <p>QuantumOptics.jl is developed in the <a>group of Prof. Helmut Ritsch</a> at the Institute for Theoretical Physics of the University of Innsbruck, Austria. Development is lead by <a>Sebastian Krämer</a>.</p>
-                <p>QuantumOptics.jl is open source and <a>hosted on GitHub</a>. All community contributions are very welcome and coordinated by the head developer, Sebastian Krämer. If you want to join our effort, fork the repository and send us your pull requets! or, even better, <a>get in touch</a> directly.</p>
+                <p>QuantumOptics.jl is developed in <a href="http://uibk.ac.at/th-physik/cqed">Helmut Ritsch's CQED group</a> at the Institute for Theoretical Physics of the University of Innsbruck. Development is lead by <a href="http://github.com/bastikr">Sebastian Krämer</a>.</p>
+                <p>QuantumOptics.jl is open source and <a href="http://github.com/qojulia/QuantumOptics.jl">hosted on GitHub</a>. All community contributions are very welcome and coordinated by the head developer. If you want to join our effort, fork the repository and send us your pull requests! Or, even better, get in touch directly.</p>
             </div>
 
         </div>
