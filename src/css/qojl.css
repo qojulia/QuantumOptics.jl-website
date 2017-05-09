@@ -1,3 +1,7 @@
+a, a:hover, a:focus {
+	color: #6b85dd;
+}
+
 .jumbotron {
 	margin-top: -80px;
 	height: 350px;
@@ -79,4 +83,8 @@ footer#globalfooter p {
 
 .tab-code-example pre {
 	margin-top: 10px;
+}
+
+.nav-pills>li.active>a, .nav-pills>li.active>a:hover {
+	background: #6b85dd;
 }
