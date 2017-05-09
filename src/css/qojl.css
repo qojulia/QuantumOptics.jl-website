@@ -76,3 +76,7 @@ footer#globalfooter p {
 .panel-m .panel-heading {
 	background: #6cac5b;
 }
+
+.tab-code-example pre {
+	margin-top: 10px;
+}
