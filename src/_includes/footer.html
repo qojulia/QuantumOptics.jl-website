@@ -3,18 +3,15 @@
 </footer>
 
 <!-- jQuery -->
-<script src="/js/jquery.js"></script>
+	<script   src="https://code.jquery.com/jquery-1.12.4.min.js"   integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="   crossorigin="anonymous"></script>
 <!-- Bootstrap Core JavaScript -->
-<script src="/js/bootstrap.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 {% if page.type == "benchmarks" %}
 <!-- Chart JS Library -->
-<script src="/js/chart.bundle.min.js"></script>
-<script src="/js/qojl.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.bundle.js"></script>
+<script src="/js/benchmark-charts.js"></script>
 {% endif %}
-
-<!-- Math Rendering JavaScript -->
-<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'></script>
 
 {% if page.type == "documentation" %}
 <!-- Documentation Search -->
@@ -25,4 +22,16 @@
 <script src="search_index.js"></script>
 <script src="/js/search.js"></script>
 {% endif %}
+{% endif %}
+
+{% if (page.type == "documentation") or (page.type == "benchmarks") %}
+<! -- MathJAX for rendering Math, enable $ ... $ as inline math environment -->
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
 {% endif %}

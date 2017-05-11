@@ -16,7 +16,7 @@ function rearrange (jsondata) {
 	return d;
 }
 
-// Dynamically object with all the plot parameters and settings
+// Dynamical object with all the plot parameters and settings
 function chartconfig (data, charttitle) {
 	return {
 	    type: 'line',

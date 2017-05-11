@@ -88,3 +88,14 @@ footer#globalfooter p {
 .nav-pills>li.active>a, .nav-pills>li.active>a:hover {
 	background: #6b85dd;
 }
+
+/* Additions to documenter.css */
+nav.toc form {
+	background: #6b85dd;
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
+nav.toc form select {
+	display: none;
+} 
