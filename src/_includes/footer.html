@@ -7,6 +7,12 @@
 <!-- Bootstrap Core JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+<!-- Syntax Highlighting JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.5.0/highlight.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.5.0/languages/julia.min.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+
+
 {% if page.type == "benchmarks" %}
 <!-- Chart JS Library -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.bundle.js"></script>
@@ -16,11 +22,11 @@
 {% if page.type == "documentation" %}
 <!-- Documentation Search -->
 <script>documenterBaseURL = "/documentation" </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.2.0/require.min.js" data-main="/js/documenter.js"></script>
+
 
 {% if page.search == true %}
-<script src="search_index.js"></script>
-<script src="/js/search.js"></script>
+<script src="/documentation/search_index.js"></script>
+<script src="/documentation/assets/js/search.js"></script>
 {% endif %}
 {% endif %}
 
