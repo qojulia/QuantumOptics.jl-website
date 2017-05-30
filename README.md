@@ -1,7 +1,7 @@
 # QuantumOptics.jl website
 
 The whole **QuantumOptics.jl** website is created from different parts:
-* **QuantumOptics.jl-examples** provides all the examples that are used and linked to in the documentation. They are created using jupyter notebooks and executed and converted to markdown with nbconvert. This markdown code is then copied to **QuantumOptics.jl-documentation**.
+* **QuantumOptics.jl-examples** provides all the examples that are used and linked to in the documentation. They are created using jupyter notebooks and executed and converted to markdown with nbconvert. This markdown code is then copied to **QuantumOptics.jl-documentation**. Additionally, it provides the codesnippets that are used on the main page of the website.
 * **QuantumOptics.jl-documentation** is written with markdown. [Documenter.jl](https://juliadocs.github.io/Documenter.jl) is used to integrate the docstrings from **QuantumOptics.jl** and to generate html code which includes the examples from **QuantumOptics.jl-examples**.
 * **QuantumOptics.jl-benchmarks** generates json files containing the results of the benchmarks and provides the source code of the examples.
 
@@ -55,10 +55,16 @@ It is recommended to place all resources into the same directory, i.e.:
 
 ## Build process
 
+The complete build process of all resources and the website itself can be done with `julia makeall.jl`.
+
+This script runs the following operations that can of course also be performed manually to obtain finer control over the build process:
+
+* All git repositories are updated with `git pull`
 * Build documentation in `QuantumOptics.jl-documentation`. Output will automatically be copied into `/src/documentation`.
-* Run benchmarks and copy results into `src/benchmark-data`. Code of the benchmarks has to be manually copied to _benchmarks-sourcecode. This process is not automated yet but definitely should be in the future. Therefor, this step can be skipped for the moment since these files are temporarily already included in the website repository.
-* Create code snippets (which then are shown in the main page) with `julia make.jl` in src/_codesnippets.
-* Use jekyll to build website:
+* Copy results of benchmarks into `src/benchmark-data` and their source code into `src/_benchmarks_sourcecode`.
+* Run code snippets (which then are shown in the main page) with `julia make.jl` in src/_codesnippets.
+
+Finally, one uses jekyll to build website:
     * For development run jekyll interactively: `jekyll serve`
     * To just create it once: `jekyll build`
-  This will create the finished website in the `build` directory which then can be deployed to the server.
+This will create the finished website in the `build` directory which then can be deployed to the server.
