@@ -4,16 +4,16 @@ dir_benchmarks = "QuantumOptics.jl-benchmarks"
 dir_documentation = "QuantumOptics.jl-documentation"
 dir_website = "QuantumOptics.jl-website"
 
-# println("========================================")
-# println("Updating all git repositories")
-# cd("../$dir_source")
-# run(`git pull`)
-# cd("../$dir_examples")
-# run(`git pull`)
-# cd("../$dir_benchmarks")
-# run(`git pull`)
-# cd("../$dir_documentation")
-# run(`git pull`)
+println("========================================")
+println("Updating all git repositories")
+cd("../$dir_source")
+run(`git pull`)
+cd("../$dir_examples")
+run(`git pull`)
+cd("../$dir_benchmarks")
+run(`git pull`)
+cd("../$dir_documentation")
+run(`git pull`)
 
 println("========================================")
 println("Building examples")
