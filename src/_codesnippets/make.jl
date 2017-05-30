@@ -12,6 +12,7 @@ for name in names
 end
 
 imagenames = filter(name->endswith(name, ".svg")||endswith(name, ".png"), readdir("."))
+mkpath(imagedir)
 for name in imagenames
     println("Copying $name")
     cp(name, joinpath(imagedir, name); remove_destination=true)
