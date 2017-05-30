@@ -60,9 +60,10 @@ The complete build process of all resources and the website itself can be done w
 This script runs the following operations that can of course also be performed manually to obtain finer control over the build process:
 
 * All git repositories are updated with `git pull`
-* Build documentation in `QuantumOptics.jl-documentation`. Output will automatically be copied into `/src/documentation`.
+* Convert notebooks in `QuantumOptics.jl-examples` into markdown files and copy them to `QuantumOptics.jl-documentation`.
+* Build documentation in `QuantumOptics.jl-documentation` and copy them into `/src/documentation`.
 * Copy results of benchmarks into `src/benchmark-data` and their source code into `src/_benchmarks_sourcecode`.
-* Run code snippets (which then are shown in the main page) with `julia make.jl` in src/_codesnippets.
+* Run code snippets (which then are shown in the main page) with `julia make.jl` in `src/_codesnippets`.
 
 Finally, one uses jekyll to build website:
     * For development run jekyll interactively: `jekyll serve`
