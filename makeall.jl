@@ -6,12 +6,16 @@ dir_website = "QuantumOptics.jl-website"
 
 println("========================================")
 println("Updating all git repositories")
+println("Updating QuantumOptics.jl")
 cd("../$dir_source")
 run(`git pull`)
+println("Updating examples")
 cd("../$dir_examples")
 run(`git pull`)
+println("Updating benchmarks")
 cd("../$dir_benchmarks")
 run(`git pull`)
+println("Updating documentation")
 cd("../$dir_documentation")
 run(`git pull`)
 
