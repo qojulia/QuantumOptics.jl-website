@@ -1,8 +1,8 @@
 using QuantumOptics
 b_x = PositionBasis(-10, 10, 300)
 b_p = MomentumBasis(b_x)
-Tpx = FFTOperator(b_p, b_x)
-Txp = FFTOperator(b_x, b_p)
+Tpx = transform(b_p, b_x)
+Txp = transform(b_x, b_p)
 x = position(b_x)
 p = momentum(b_p)
 
