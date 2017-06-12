@@ -1,9 +1,86 @@
 // Config
-var qojl_data = "QuantumOptics.jl-ae69320f5c";
+var qojl_data = "QuantumOptics.jl"; // ignore version by RegEx Repalce
 var qutip_data = "QuTiP-4.1.0";
+var qutipcython_data = "QuTiP-4.1.0/cython";
 var toolbox_data = "QuantumOpticsToolbox";
 
-// Rearrange dat structure
+// Asign colors to different toolboxes
+function chartcolors (type) {
+	switch (type) {
+		case qojl_data:
+			return '#d66761';
+			break;
+		case qutip_data:
+			return '#a87db6';
+			break;
+		case qutipcython_data:
+			return '#666666';
+			break;
+		case toolbox_data:
+			return '#6cac5b';
+			break;
+	}
+}
+
+// Nice reaable names for different toolboxes
+function chartnames (type) {
+	switch (type) {
+		case qojl_data:
+			return 'QO.jl';
+			break;
+		case qutip_data:
+			return 'QuTiP';
+			break;
+		case qutipcython_data:
+			return 'QuTiP/cython';
+			break;
+		case toolbox_data:
+			return 'QO Toolbox';
+			break;
+	}
+}
+
+// Define CSS for Source Code Buttons
+function btncss (type) {
+	switch (type) {
+		case qojl_data:
+			return 'qojl';
+			break;
+		case qutip_data:
+			return 'qutip';
+			break;
+		case qutipcython_data:
+			return 'qutipc';
+			break;
+		case toolbox_data:
+			return 'qotb';
+			break;
+	}
+}
+
+// Create Links to GitHub pages
+function githublink (type, file) {
+	base = 'https://github.com/qojulia/QuantumOptics.jl-benchmarks/blob/master/benchmarks-';
+	
+	switch (type) {
+		case qojl_data:
+			link = 'QuantumOptics.jl/'+file+'.jl';
+			break;
+		case qutip_data:
+			link = 'QuTiP/'+file+'.py';
+			break;
+		case qutipcython_data:
+			link = 'QuTiP/'+file+'_cython.py';
+			break;
+		case toolbox_data:
+			link = 'QuantumOpticsToolbox/'+file+'.m';
+			break;
+	}
+	
+	return base + link;
+}
+
+// Rearrange data structure
 function rearrange (jsondata) {
 		d = [];
 
@@ -18,31 +95,10 @@ function rearrange (jsondata) {
 
 // Dynamical object with all the plot parameters and settings
 function chartconfig (data, charttitle) {
-	return {
+	configobj = {
 	    type: 'line',
 	    data: {
-	        datasets: [{
-		       label: 'QuantumOptics.jl',
-		       data: rearrange(data[qojl_data]),
-		       fill: false,
-		       borderWidth: 3.0,
-		       borderColor: '#d66761',
-		       backgroundColor: '#d66761'
-	        }, {
-	            label: 'QuTiP 4.1.0',
-	            data: rearrange(data[qutip_data]),
-	            fill: false,
-	            borderWidth: 3.0,
-	            borderColor: '#a87db6',
-	            backgroundColor: '#a87db6'
-	        }, {
-		       label: 'QO Toolbox',
-		       data: rearrange(data[toolbox_data]),
-		       fill: false,
-		       borderWidth: 3.0,
-		       borderColor: '#6cac5b',
-		       backgroundColor: '#6cac5b'
-	        }]
+	        datasets: []
 	    },
 	    options: {
 		    title: {
@@ -75,33 +131,65 @@ function chartconfig (data, charttitle) {
 	        }
 	    }
 	};
+	
+	for (dataname in data) {
+		new_dataset = {
+			       label: chartnames(dataname),
+			       data: rearrange(data[dataname]),
+			       fill: false,
+			       borderWidth: 3.0,
+			       borderColor: chartcolors (dataname),
+			       backgroundColor: chartcolors (dataname)
+		        };
+		
+		configobj.data.datasets.push(new_dataset);
+		}
+	
+	
+	
+	return configobj;
 }
 
-// Function to create Plot from JSON
-function createplot (file, htmlid, title) {
-	$.getJSON('/benchmark-data/'+file, function (data) {
-	var ctx = $(htmlid);
-	var scatterChart = new Chart(ctx, chartconfig(data, title));
-	});
+
+// Dynamically generate buttons that link to source cod
+function sourceButtons (plot, data) {
+	var buttons = '<div class="btn-group btn-group-sm">';
+	
+	buttons = buttons + '<a href="" class="btn btn-default"><i class="fa fa-github"></i> Source Code</a>';
+	
+	file = plot.attr('id');
+	
+	for (d in data) {
+		buttons = buttons+ '<a href="'+githublink(d, file)+'" class="btn btn-'+btncss(d)+'">'+chartnames(d)+'</a>';
+	}
+	
+	buttons = buttons + '</div>';
+	
+	plot.parent().addClass('text-center');
+	plot.after(buttons);
+		
 }
 
-// Now, create the plots
-createplot('timeevolution_master.json', '#plot-timeevolution-master', 'Time Evolution (Master Equation)');
-createplot('timeevolution_particle.json', '#plot-timeevolution-particle', 'Time Evolution (Particle)');
-createplot('timeevolution_timedependent.json', '#plot-timeevolution-timedependent', 'Time Evolution (Time dependent)');
+// Initialize plot array
+var plot = [] ;
 
-createplot('multiplication_sparse_sparse.json', '#plot-multiplication-sparse-sparse', 'Multiplication: sparse-sparse');
-createplot('multiplication_sparse_dense.json', '#plot-multiplication-sparse-dense', 'Multiplication: sparse-dense');
-createplot('multiplication_dense_sparse.json', '#plot-multiplication-dense-sparse', 'Multiplication: dense-sparse');
-createplot('multiplication_dense_dense.json', '#plot-multiplication-dense-dense', 'Multiplication: dense-dense');
+$('canvas').each(function (index) {
+	 plot[index] = $(this);
+	 
+	 $.get('/benchmark-data/'+plot[index].attr('id')+'.json', function (data) {
+	 
+	 data = data.replace(/QuantumOptics.jl-.*?(?=")/g, 'QuantumOptics.jl');
+	 
+	 jsondata = $.parseJSON(data);
+	 	 
+	new Chart(plot[index], chartconfig(jsondata, plot[index].data('title')));
+	
+	sourceButtons (plot[index], jsondata);
+	
+	}, 'text');
+	
+	
+	
+	
+});
 
-createplot('expect_state.json', '#plot-expect-state', 'Expectation Value (State Vector)');
-createplot('expect_operator.json', '#plot-expect-operator', 'Expectation Value (Density Operator)');
-createplot('variance_operator.json', '#plot-variance-operator', 'Variance (Density Operator)');
-createplot('variance_state.json', '#plot-variance-state', 'Variance (State Vector)');
-
-createplot('ptrace.json', '#plot-ptrace', 'Partial Trace Performance');
-
-createplot('coherentstate.json', '#plot-coherentstate', 'Coherent State Performance');
-createplot('qfunc_state.json', '#plot-qfunc-state', 'Q-Function for State Vectors');
-createplot('qfunc_operator.json', '#plot-qfunc-operator', 'Q-Function for Density Operators');

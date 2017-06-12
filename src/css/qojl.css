@@ -3,6 +3,10 @@ body, input {
   text-rendering: optimizeLegibility;
 }
 
+body {
+	padding-top: 60px;
+}
+
 pre, code {
   font-family: 'Ubuntu Mono', Monaco, courier, monospace;
 }
@@ -10,17 +14,6 @@ pre, code {
 
 a, a:hover, a:focus {
 	color: #6b85dd;
-}
-
-.jumbotron {
-	margin-top: -80px;
-	height: 350px;
-	background: #eeeeee;
-	color: #000000;
-}
-
-.jumbotron img {
-	padding-top: 60px;
 }
 
 .navbar {
@@ -31,15 +24,36 @@ a, a:hover, a:focus {
 	border-bottom: #ffffff 1px solid;
 }
 
-body {
-	padding-top: 60px;
-}
+
 
 .toc h1 {
 	margin-top: 85px;
 }
 
 
+.btn-qojl, .btn-qojl:hover {
+	background: #d66761;
+	color: #ffffff;
+}
+
+.btn-qutip, .btn-qutip:hover {
+	background: #a87db6;
+	color: #ffffff;
+}
+
+.btn-qutipc, .btn-qutipc:hover {
+	background: #666666;
+	color: #ffffff;
+}
+
+.btn-qotb, .btn-qotb:hover {
+	background: #6cac5b;
+	color: #ffffff;
+}
+
+.btn-group {
+	margin-bottom: 30px;
+}
 
 footer.footer {
 	width: 100%;
@@ -75,28 +89,16 @@ footer#globalfooter p {
 	color: #6cac5b;
 }
 
-.panel-heading h4 a {
-	color: #ffffff;
-}
-
-.panel-jl .panel-heading {
-	background: #d66761;
-}
-
-.panel-py .panel-heading {
-	background: #a87db6;
-}
-
-.panel-m .panel-heading {
-	background: #6cac5b;
-}
-
 .tab-code-example pre {
 	margin-top: 10px;
 }
 
 .nav-pills>li.active>a, .nav-pills>li.active>a:hover {
 	background: #6b85dd;
+}
+
+canvas {
+	margin: 25px 0;
 }
 
 /* Additions to documenter.css */
@@ -108,4 +110,4 @@ nav.toc form {
 
 nav.toc form select {
 	display: none;
-} 
+}
