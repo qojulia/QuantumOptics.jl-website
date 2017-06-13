@@ -24,7 +24,7 @@
                 </p>
                     </div>
                     <div class="col-md-4">
-	                    <img src="http://placehold.it/400x300" class="img-responsive">
+	                    <img src="images/benchmarks_cavity.svg" class="img-responsive">
                     </div>
                 </div>
                 <div class="row">
@@ -41,6 +41,10 @@
 	                    <canvas id="timeevolution_master_timedependent_cavity" data-title="Cavity Master Equation (Time-Dependent)"></canvas>
                        
                     </div>
+                    <div class="col-md-6">
+	                    <canvas id="timeevolution_mcwf_cavity" data-title="Cavity Quantum Trajectories"></canvas>
+                       
+                    </div>
                 </div>
                 
                 <div class="page-header">
@@ -52,7 +56,7 @@
                 <p>
 	                An atom, modeled as a dipole, is resonantly coupled to a cavity mode, modeled as a Fock space with a certain cutoff. Photon loss and incoherent driving by a thermal bath are included and taken into account by the master equation
 	                
-	               $$\dot{\rho} = i \big[ \rho, H \big] +  \kappa \left( 1 + \bar n \right) \, \mathcal{D} \left[ a \right] \rho + \kappa \bar n \, \mathcal{D} \left[ a^\dagger \right] \rho$$ 
+	               $$\dot{\rho} = i \big[ \rho, H \big] +  \kappa \left( 1 + \bar n \right) \, \mathcal{D} \left[ a \right] \rho + \kappa \bar n \, \mathcal{D} \left[ a^\dagger \right] \rho + \gamma \, \mathcal{D} \left[ \sigma^- \right] \rho$$ 
 	               
 	   with the Hamiltonian
 	   
@@ -66,7 +70,7 @@
                 
                     </div>
                     <div class="col-md-4">
-	                    <img src="http://placehold.it/400x300" class="img-responsive">
+	                    <img src="images/benchmarks_jaynescummings.svg" class="img-responsive">
                     </div>
                 </div>
                 <div class="row">
@@ -81,6 +85,10 @@
                     </div>
                     <div class="col-md-6">
 	                    <canvas id="timeevolution_master_timedependent_jaynescummings" data-title="Jaynes-Cummings Master Equation (Time-Dependent)"></canvas>
+                       
+                    </div>
+                    <div class="col-md-6">
+	                    <canvas id="timeevolution_mcwf_jaynescummings" data-title="Jaynes-Cummings Quantum Trajectories"></canvas>
                        
                     </div>
                 </div>
@@ -104,7 +112,7 @@
                 
                     </div>
                     <div class="col-md-4">
-	                    <img src="http://placehold.it/400x300" class="img-responsive">
+	                    <img src="images/benchmarks_particle.svg" class="img-responsive">
                     </div>
                 </div>
                 <div class="row">
@@ -119,6 +127,10 @@
                     </div>
                     <div class="col-md-6">
 	                    <canvas id="timeevolution_master_timedependent_particle" data-title="Particle Master Equation (Time-Dependent)"></canvas>
+                       
+                    </div>
+                    <div class="col-md-6">
+	                    <canvas id="timeevolution_mcwf_particle" data-title="Particle Quantum Trajectories"></canvas>
                        
                     </div>
                 </div>

@@ -36,9 +36,17 @@ a, a:hover, a:focus {
 	color: #ffffff;
 }
 
+.btn-qojl {
+	text-decoration: underline;
+}
+
 .btn-qutip, .btn-qutip:hover {
 	background: #a87db6;
 	color: #ffffff;
+}
+
+.btn-qutip {
+	text-decoration: underline;
 }
 
 .btn-qutipc, .btn-qutipc:hover {
@@ -46,9 +54,17 @@ a, a:hover, a:focus {
 	color: #ffffff;
 }
 
+.btn-qutipc {
+	text-decoration: underline;
+}
+
 .btn-qotb, .btn-qotb:hover {
 	background: #6cac5b;
 	color: #ffffff;
+}
+
+.btn-qotb {
+	text-decoration: underline;
 }
 
 .btn-group {

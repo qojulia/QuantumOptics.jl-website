@@ -1,5 +1,6 @@
 // Config
 var qojl_data = "QuantumOptics.jl"; // ignore version by RegEx Repalce
+var qojlfft_data = "QuantumOptics.jl/fft"; // ignore version by RegEx Repalce
 var qutip_data = "QuTiP-4.1.0";
 var qutipcython_data = "QuTiP-4.1.0/cython";
 var toolbox_data = "QuantumOpticsToolbox";
@@ -22,7 +23,7 @@ function chartcolors (type) {
 	}
 }
 
-// Nice reaable names for different toolboxes
+// Nice readable names for different toolboxes
 function chartnames (type) {
 	switch (type) {
 		case qojl_data:
@@ -37,6 +38,8 @@ function chartnames (type) {
 		case toolbox_data:
 			return 'QO Toolbox';
 			break;
+		default:
+			return type;
 	}
 }
 
@@ -73,7 +76,7 @@ function githublink (type, file) {
 			link = 'QuTiP/'+file+'_cython.py';
 			break;
 		case toolbox_data:
-			link = 'QuantumOpticsToolbox/'+file+'.m';
+			link = 'QuantumOpticsToolbox/bench_'+file+'.m';
 			break;
 	}
 	
@@ -155,7 +158,7 @@ function chartconfig (data, charttitle) {
 function sourceButtons (plot, data) {
 	var buttons = '<div class="btn-group btn-group-sm">';
 	
-	buttons = buttons + '<a href="" class="btn btn-default"><i class="fa fa-github"></i> Source Code</a>';
+	buttons = buttons + '<a href="" class="btn btn-default"><i class="fa fa-github"></i> View Source Code</a>';
 	
 	file = plot.attr('id');
 	
@@ -178,9 +181,16 @@ $('canvas').each(function (index) {
 	 
 	 $.get('/benchmark-data/'+plot[index].attr('id')+'.json', function (data) {
 	 
-	 data = data.replace(/QuantumOptics.jl-.*?(?=")/g, 'QuantumOptics.jl');
 	 
-	 jsondata = $.parseJSON(data);
+	 data = data.replace(/QuantumOptics\.jl-\w*\/fft(?=")/g, 'QuantumOptics.jl/fft');
+	 data = data.replace(/QuantumOptics.jl-\w*(?=")/g, 'QuantumOptics.jl');
+	 
+	jsondata = $.parseJSON(data);
+	 
+	 // Leave out FFT Benchmarks for now
+	  if (qojlfft_data in jsondata) {
+	 	delete jsondata[qojlfft_data];
+	 }
 	 	 
 	new Chart(plot[index], chartconfig(jsondata, plot[index].data('title')));
 	
