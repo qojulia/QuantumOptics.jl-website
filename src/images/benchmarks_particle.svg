@@ -9,7 +9,7 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   sodipodi:docname="benchmarks_patrticle.svg"
+   sodipodi:docname="benchmarks_particle.svg"
    inkscape:version="0.91 r13725"
    version="1.1"
    id="svg2"
@@ -26,8 +26,8 @@
      showgrid="true"
      inkscape:current-layer="layer1"
      inkscape:document-units="px"
-     inkscape:cy="76.492264"
-     inkscape:cx="245.95565"
+     inkscape:cy="76.242264"
+     inkscape:cx="224.89315"
      inkscape:zoom="8.0000002"
      inkscape:pageshadow="2"
      inkscape:pageopacity="0.0"
@@ -278,7 +278,7 @@
      id="layer1"
      transform="translate(0,-733.46456)">
     <path
-       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Arrow2Sstart);marker-end:url(#Arrow2Send)"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Arrow1Sstart);marker-end:url(#Arrow1Send)"
        d="m 220,1010.3622 c 0,0 22.72245,-10.1092 33,-17 9.81986,-6.58393 27,-23 27,-23"
        id="path7889"
        inkscape:connector-curvature="0"
