@@ -21,9 +21,13 @@
 
 {% if page.type == "documentation" %}
 <!-- Documentation Search -->
-<scritp src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.3/require.min.js"></scritp>
-<script src="/documentation/search_index.js"></script>
 <script>documenterBaseURL = "/documentation" </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.2.0/require.min.js" data-main="/documentation/assets/documenter.js"></script>
+
+{% if page.search == true %}
+<script src="/documentation/search_index.js"></script>
+<script src="/documentation/assets/search.js"></script>
+{% endif %}
 {% endif %}
 
 {% if (page.type == "documentation") or (page.type == "benchmarks") %}
