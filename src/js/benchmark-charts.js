@@ -140,6 +140,7 @@ function chartconfig (data, charttitle) {
 			       label: chartnames(dataname),
 			       data: rearrange(data[dataname]),
 			       fill: false,
+			       lineTension: 0,
 			       borderWidth: 3.0,
 			       borderColor: chartcolors (dataname),
 			       backgroundColor: chartcolors (dataname)
@@ -191,7 +192,8 @@ $('canvas').each(function (index) {
 	  if (qojlfft_data in jsondata) {
 	 	delete jsondata[qojlfft_data];
 	 }
-	 	 
+	 
+	plot[index].attr('height', '180');	 
 	new Chart(plot[index], chartconfig(jsondata, plot[index].data('title')));
 	
 	sourceButtons (plot[index], jsondata);

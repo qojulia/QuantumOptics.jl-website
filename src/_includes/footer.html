@@ -21,13 +21,9 @@
 
 {% if page.type == "documentation" %}
 <!-- Documentation Search -->
-<script>documenterBaseURL = "/documentation" </script>
-
-
-{% if page.search == true %}
+<scritp src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.3/require.min.js"></scritp>
 <script src="/documentation/search_index.js"></script>
-<script src="/documentation/assets/js/search.js"></script>
-{% endif %}
+<script>documenterBaseURL = "/documentation" </script>
 {% endif %}
 
 {% if (page.type == "documentation") or (page.type == "benchmarks") %}
