@@ -159,7 +159,7 @@ function chartconfig (data, charttitle) {
 function sourceButtons (plot, data) {
 	var buttons = '<div class="btn-group btn-group-sm">';
 	
-	buttons = buttons + '<a href="" class="btn btn-default"><i class="fa fa-github"></i> View Source Code</a>';
+	buttons = buttons + '<a style="cursor: default;" class="btn btn-default"><i class="fa fa-github"></i> View Source Code</a>';
 	
 	file = plot.attr('id');
 	
