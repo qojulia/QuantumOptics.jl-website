@@ -19,8 +19,8 @@ end
 tout, ψₜ = timeevolution.schroedinger_dynamic([0:0.1:20;], ψ₀, fout)
 
 using PyPlot
-plot(samplepoints(b_x), abs2(ψₜ[1].data))
-plot(samplepoints(b_x), abs2(ψₜ[end].data))
+plot(samplepoints(b_x), abs2.(ψₜ[1].data))
+plot(samplepoints(b_x), abs2.(ψₜ[end].data))
 xlabel("x")
 ylabel("Density")
 savefig("gross_pitaevskii.svg")
