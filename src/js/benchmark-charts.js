@@ -1,8 +1,8 @@
 // Config
 var qojl_data = "QuantumOptics.jl"; // ignore version by RegEx Repalce
 var qojlfft_data = "QuantumOptics.jl/fft"; // ignore version by RegEx Repalce
-var qutip_data = "QuTiP-4.1.0";
-var qutipcython_data = "QuTiP-4.1.0/cython";
+var qutip_data = "QuTiP-4.2.0";
+var qutipcython_data = "QuTiP-4.2.0/cython";
 var toolbox_data = "QuantumOpticsToolbox";
 
 // Asign colors to different toolboxes
