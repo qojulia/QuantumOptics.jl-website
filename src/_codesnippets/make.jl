@@ -2,7 +2,7 @@ sourcedir = "src"
 builddir = "build"
 imagedir = "../../images/codesnippets"
 
-cp(sourcedir, builddir; remove_destination=true)
+cp(sourcedir, builddir; force=true)
 cd(builddir)
 
 names = filter(name->endswith(name, ".jl"), readdir("."))
@@ -15,5 +15,5 @@ imagenames = filter(name->endswith(name, ".svg")||endswith(name, ".png"), readdi
 mkpath(imagedir)
 for name in imagenames
     println("Copying $name")
-    cp(name, joinpath(imagedir, name); remove_destination=true)
+    cp(name, joinpath(imagedir, name); force=true)
 end

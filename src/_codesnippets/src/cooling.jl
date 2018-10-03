@@ -15,7 +15,7 @@ function fclassical(t, ψ, u, du)
   du[1] = 0.3*real(u[2])
   du[2] = sin(real(u[1]))*real(expect(dagger(a)*sm, ψ))
 end
-ψ0 = semiclassical.State(fockstate(bc, 0) ⊗ spindown(ba), Complex128[sqrt(2), 6.0])
+ψ0 = semiclassical.State(fockstate(bc, 0) ⊗ spindown(ba), ComplexF64[sqrt(2), 6.0])
 tout, ρt = semiclassical.master_dynamic([0:0.1:200;], ψ0, fquantum, fclassical)
 p = [real(r.classical[2]) for r=ρt]
 
