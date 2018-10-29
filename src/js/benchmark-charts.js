@@ -1,8 +1,8 @@
 // Config
-var qojl_data = "QuantumOptics.jl"; // ignore version by RegEx Repalce
-var qojlfft_data = "QuantumOptics.jl/fft"; // ignore version by RegEx Repalce
-var qutip_data = "QuTiP-4.2.0";
-var qutipcython_data = "QuTiP-4.2.0/cython";
+var qojl_data = "QuantumOptics.jl"; // ignore version by RegEx Replace
+var qojlfft_data = "QuantumOptics.jl/fft"; // ignore version by RegEx Replace
+var qutip_data = "QuTiP";
+var qutipcython_data = "QuTiP/cython";
 var toolbox_data = "QuantumOpticsToolbox";
 
 // Asign colors to different toolboxes
@@ -185,6 +185,8 @@ $('canvas').each(function (index) {
 	 
 	 data = data.replace(/QuantumOptics\.jl-\w*\/fft(?=")/g, 'QuantumOptics.jl/fft');
 	 data = data.replace(/QuantumOptics.jl-\w*(?=")/g, 'QuantumOptics.jl');
+	 data = data.replace(/QuTiP-[0-9.]*(?=")/g, 'QuTiP');
+	 data = data.replace(/QuTiP-[0-9.]*\/cython(?=")/g, 'QuTiP/cython');
 	 
 	jsondata = $.parseJSON(data);
 	 
