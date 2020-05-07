@@ -1,5 +1,5 @@
-<footer class="footer {% if page.type == "documentation" %} documentation {% endif %}">
-    <p>Copyright &copy; 2019 qojulia.org</p>
+<footer class="footer">
+    <p>Copyright &copy; 2018-2020 qojulia.org</p>
 </footer>
 
 <!-- jQuery -->
@@ -17,20 +17,7 @@
 <!-- Chart JS Library -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.bundle.js"></script>
 <script src="/js/benchmark-charts.js"></script>
-{% endif %}
 
-{% if page.type == "documentation" %}
-<!-- Documentation Search -->
-<script>documenterBaseURL = "/documentation" </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.2.0/require.min.js" data-main="/documentation/assets/documenter.js"></script>
-
-{% if page.search == true %}
-<script src="/documentation/search_index.js"></script>
-<script src="/documentation/assets/search.js"></script>
-{% endif %}
-{% endif %}
-
-{% if (page.type == "documentation") or (page.type == "benchmarks") %}
 <! -- MathJAX for rendering Math, enable $ ... $ as inline math environment -->
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
