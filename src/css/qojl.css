@@ -106,17 +106,11 @@ canvas {
 	margin: 25px 0;
 }
 
-/* Additions to documenter.css */
-nav.toc form {
-	background: #6b85dd;
-	padding-top: 15px;
-	padding-bottom: 15px;
+.panel .panel-body {
+	height: 500px;
 }
 
-nav.toc form select {
-	display: none;
-}
-
-nav.toc h1 {
-	padding-top: 40px;
+.panel .panel-body a.btn {
+	position: absolute;
+	bottom: 40px;
 }
