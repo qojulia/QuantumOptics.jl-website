@@ -114,3 +114,19 @@ canvas {
 	position: absolute;
 	bottom: 40px;
 }
+
+.jumbotron .container .col-md-6 {
+	position: relative;
+}
+
+#versionbadge {
+	color: #ffffff;
+	background: #990000;
+	z-index: 100;
+	position: absolute;
+	right: 0;
+	top: 0;
+	transform: rotate(15deg);
+	padding: 0.5em 1em;
+	border-radius: 0.2em;
+}
