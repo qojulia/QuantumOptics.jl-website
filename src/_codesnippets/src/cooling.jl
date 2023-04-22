@@ -9,7 +9,7 @@ J = [a, sqrt(2)*sm]
 Jdagger = dagger.(J)
 
 fquantum(t, ψ, u) = H0 + Hx*cos(u[1]), J, Jdagger
-function fclassical(t, ψ, u, du)
+function fclassical(du, u, ψ, t)
   du[1] = 0.3*real(u[2])
   du[2] = sin(real(u[1]))*real(expect(dagger(a)*sm, ψ))
 end
