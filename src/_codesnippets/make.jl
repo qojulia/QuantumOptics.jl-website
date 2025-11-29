@@ -2,13 +2,15 @@ sourcedir = "src"
 builddir = "build"
 imagedir = "../../images/codesnippets"
 
+cd(@__DIR__)
 cp(sourcedir, builddir; force=true)
 cd(builddir)
 
-names = filter(name->endswith(name, ".jl"), readdir("."))
+names = filter(endswith(".jl"), readdir("."))
 for name in names
     println("Executing $name")
-    run(`julia $name`)
+    include(joinpath(builddir, "$name"))
+    PyPlot.clf()
 end
 
 imagenames = filter(name->endswith(name, ".svg")||endswith(name, ".png"), readdir("."))
